@@ -1,0 +1,371 @@
+<html class="no-js" lang="en">
+    <head>
+        {% block head %}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+            <meta name="author" content=""/>
+            <title>Russie 2018</title>
+            {% block stylesheet %}
+                <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/transition.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+                <link rel="stylesheet" href="{{ asset('style.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/color.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+            {% endblock %}
+            {% block font %}
+                <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800|Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+            {% endblock %}
+            {% block js %}
+                <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
+            {% endblock %}
+        {% endblock %}
+    </head>
+    {% block body %}
+    <body>
+
+            {% block wrapper %}
+                <div class="wrap push">
+                    <!-- Header -->
+                    {% block header %}
+                        <header class="header style-3">
+                            <!-- Top bar -->
+                            <div class="topbar-and-logobar">
+                                <div class="container">
+                                    <!-- Responsive Button -->
+                                    <div class="responsive-btn pull-right">
+                                        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+                                    </div>
+                                    <!-- Responsive Button -->
+
+                                    <!-- User Login Option -->
+                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                        <ul class="user-login-option pull-right">
+                                            <li class="login-modal">
+                                                <a href="{{ path('fos_user_security_logout') }}" class="login"><i class="fa fa-user"></i>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('dashboard') }}">Dashboard</a>
+                                            </li>
+                                        </ul>
+                                    {% else %}
+                                        <ul class="user-login-option pull-right">
+                                            <li class="login-modal">
+                                                <a href="#" class="login" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>member Login</a>
+                                                <div class="modal fade" id="login-modal">
+                                                    <div class="login-form position-center-center">
+                                                        <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
+                                                        <form action="{{ path("fos_user_security_check") }}" method="post">
+
+                                                            <input type="hidden" name="_csrf_token" value="{{ fos_csrf_provider.refreshToken('authenticate') }}" />
+                                                            <div class="form-group">
+                                                                <input  name="_username"  type="text" class="form-control" required="required" placeholder="domain@live.com">
+                                                                <i class=" fa fa-envelope"></i>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input id="password" type="password" class="form-control" name="_password" required="required" placeholder="**********">
+                                                                <i class=" fa fa-lock"></i>
+                                                            </div>
+                                                            <div class="form-group custom-checkbox">
+                                                                <label>
+                                                                    <input type="checkbox"> Stay login
+                                                                </label>
+                                                                <a class="pull-right forgot-password" href="#"></a>
+                                                                <a href="#" class="pull-right forgot-password" data-toggle="modal" data-target="#login-modal-2">Forgot password?</a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input class="btn full-width red-btn" type="submit" id="_submit" name="_submit" value="Login" />
+                                                            </div>
+                                                        </form>
+                                                        <span class="or-reprater"></span>
+                                                        <ul class="others-login-way">
+                                                            <li><a class="facebook-bg" href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
+                                                            <li><a class="tweet-bg" href="#"><i class="fa fa-twitter"></i>Tweet</a></li>
+                                                            <li><a class="linkedin-bg" href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
+                                                            <li><a class="google-plus-bg" href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="user-login-option pull-right">
+                                            <li class="login-modal">
+                                                <a href="{{ path('fos_user_registration_register') }}" class="login"><i class="fa fa-user"></i>Inscription</a>
+                                            </li>
+                                        </ul>
+                                    {% endif %}
+
+                                    <!-- User Login Option -->
+
+                                </div>
+                            </div>
+                            <!-- Top bar -->
+                            <!-- Nav -->
+                            <div class="nav-holder">
+                                <div class="container">
+                                    <div class="maga-drop-wrap">
+
+                                        <!-- Logo -->
+                                        <div class="logo">
+                                            <a href="{{ path('client_homepage') }}"><img src="{{ asset('images/logo-4.png') }}" alt=""></a>
+                                        </div>
+                                        <!-- Logo -->
+
+                                        <!-- Search Bar -->
+                                        <div class="search-bar-holder pull-right">
+                                            <div class="search-bar">
+                                                <input type="text" class="form-control" placeholder="search enter please...">
+                                                <i class="fa fa-search"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Search Bar -->
+
+                                        <!-- Nav List -->
+                                        <ul class="nav-list pull-right">
+                                            <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                                            <li>
+                                                <a href="{{ path('index_galerie') }}">Galerie</a>
+                                                {% if is_granted("ROLE_MEMBRE") %}
+                                                    <ul>
+                                                        <li><a href="{{ path('index_galerie') }}">Galerie</a></li>
+                                                        <li><a href="{{ path('magalerie') }}">Ma Galerie</a></li>
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('indexPublication') }}">Actualite</a>
+                                                {% if is_granted("ROLE_JOURNALISTE") %}
+                                                    <ul>
+                                                        <li><a href="{{ path('indexPublication') }}">Actualite</a></li>
+                                                        <li><a href="{{ path('mesarticle') }}">Mes Articles</a></li>
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('indexEquipe') }}">Equipes</a>
+                                                <ul>
+                                                    <li><a href="{{ path('indexEquipe') }}">Equipes</a></li>
+                                                    <li><a href="{{ path('team-detail') }}">Equipes detail</a></li>
+                                                    <li><a href="{{ path('team-width-sidebar') }}">Statistiques des equipes</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ path('indexMatch2018') }}">Match</a>
+                                                <ul>
+                                                    <li><a href="{{ path('indexMatch2018') }}">Match</a></li>
+                                                    <!--  <li><a href="{##}{ #path('match-detail') }}">Match Detail</a></li>-->
+                                                    <li><a href="{{ path('match-result') }}">Match Result</a></li>
+                                                    <li><a href="{{ path('indexGroupe') }}">Groupes</a></li>
+                                                    <li><a href="{{ path('indexStade') }}">Stades</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Parier en Ligne</a>
+                                                <ul>
+                                                    <li><a href="{{ path('indexPari') }}">Parier</a></li>
+                                                    <li><a href="{{ path('shop-detail') }}">shop detail</a></li>
+                                                    <li><a href="{{ path('cart') }}">cart</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{{ path('tout_les_joueur') }}">Joueurs</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{ path('tout_les_joueur') }}">Tout les joueurs</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                        <!-- Nav List -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Nav -->
+
+                        </header>
+                    {% endblock %}
+                    <!-- Header -->
+                    <!-- Main Content -->
+                    {% block content %}
+                    {% endblock %}
+                    <!-- Main Content -->
+
+                    <!-- Footer -->
+                    {% block footer %}
+                        <footer class="main-footer style-2">
+
+                            <!-- Footer Columns -->
+                            <div class="container">
+
+                                <!-- Footer columns -->
+                                <div class="footer-column border-0">
+                                    <div class="row">
+
+                                        <!-- Footer Column -->
+                                        <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
+                                            <div class="column-widget h-white">
+                                                <div class="logo-column p-white">
+                                                    <img class="footer-logo" src="{{ asset('images/footer-logo.png') }}" alt="">
+                                                    <ul class="address-list style-2">
+                                                        <li><span>Address:</span>1782 Harrison Street  Sun Prairie</li>
+                                                        <li><span>Phone Number:</span>49 30 47373795</li>
+                                                        <li><span>Email Address:</span>moin@blindtextgenerator.de</li>
+                                                    </ul>
+                                                    <span class="follow-us">follow us </span>
+                                                    <ul class="social-icons">
+                                                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                                        <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                                        <li><a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Footer Column -->
+
+                                        <!-- Footer Column -->
+                                        <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
+                                            <div class="column-widget h-white">
+                                                <h5>Advertisment</h5>
+                                                <a href="#"><img src="{{ asset('images/footer-add.jpg') }}" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <!-- Footer Column -->
+
+                                        <!-- Footer Column -->
+                                        <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
+                                            <div class="column-widget h-white">
+                                                <h5>Sponcer</h5>
+                                                <ul id="brand-icons-slider-2" class="brand-icons-slider-2">
+                                                    <li>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-1.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-2.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-3.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-4.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-5.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-6.png') }}" alt=""></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-1.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-2.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-3.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-4.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-5.png') }}" alt=""></a>
+                                                        <a href="#"><img src="{{ asset('images/brand-icons/img-1-6.png') }}" alt=""></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- Footer Column -->
+
+                                    </div>
+                                </div>
+                                <!-- Footer columns -->
+
+                            </div>
+                            <!-- Footer Columns -->
+
+                            <!-- Copy Rights -->
+                            <div class="copy-rights">
+                                <div class="container">
+                                    <p>© Copyright by <i class="red-color">FineLayers</i> All rights reserved.</p>
+                                    <a class="back-to-top scrollup" href="#"><i class="fa fa-angle-up"></i></a>
+                                </div>
+                            </div>
+                            <!-- Copy Rights -->
+
+                        </footer>
+                    {% endblock %}
+                    <!-- Footer -->
+                </div>
+            {% endblock %}
+            {% block slideMenu %}
+            <nav id="menu" class="responive-nav">
+                <a class="r-nav-logo" href="{{ path('client_homepage') }}"><img src="{{ asset('images/logo-1.png') }}" alt=""></a>
+                <ul class="respoinve-nav-list">
+                    <li>
+                        <a data-toggle="collapse" href="#list-1"><i class="pull-right fa fa-angle-down"></i>Home</a>
+                        <ul class="collapse" id="list-1">
+                            <li><a href="{{ path('client_homepage') }}">Home 1</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#list-2"><i class="pull-right fa fa-angle-down"></i>Team</a>
+                        <ul class="collapse" id="list-2">
+                            <li><a href="{{ path('indexEquipe') }}">Team</a></li>
+                            <li><a href="{{ path('team-detail') }}">Team Detail</a></li>
+                            <li><a href="{{ path('team-width-sidebar') }}">team widthsidebar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{ path('gallery') }}">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#">News</a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#list-3"><i class="pull-right fa fa-angle-down"></i>Match</a>
+                        <ul class="collapse" id="list-3">
+                            <li><a href="{{ path('indexMatch2018') }}">match</a></li>
+                            <li><a href="{{ path('indexMatch2018') }}">match detail</a></li>
+                            <li><a href="{{ path('indexMatch2018') }}">match result</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#list-4"><i class="pull-right fa fa-angle-down"></i>Shop</a>
+                        <ul class="collapse" id="list-4">
+                            <li><a href="{{ path('shop') }}">shop</a></li>
+                            <li><a href="{{ path('cart') }}">cart</a></li>
+                            <li><a href="{{ path('shop-detail') }}">shop detail</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#list-5"><i class="pull-right fa fa-angle-down"></i>Pages</a>
+                        <ul class="collapse" id="list-5">
+                            <li><a href="{{ path('404') }}">404</a></li>
+                            <li><a href="{{ path('underconstraction') }}">underconstraction</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#list-6"><i class="pull-right fa fa-angle-down"></i>Blog</a>
+                        <ul class="collapse" id="list-6">
+                            <li><a href="{{ path('blog') }}">blog</a></li>
+                            <li><a href="{{ path('blog-detail') }}">blog detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+            {% endblock %}
+            {% block jvs %}
+                <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+                <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
+                <script src="http://maps.google.com/maps/api/js"></script>
+                <script src="{{ asset('js/gmap3.min.js') }}"></script>
+                <script src="{{ asset('js/bigslide.js') }}"></script>
+                <script src="{{ asset('js/slick.js') }}"></script>
+                <script src="{{ asset('js/waterwheelCarousel.js') }}"></script>
+                <script src="{{ asset('js/contact-form.js') }}"></script>
+                <script src="{{ asset('js/countTo.js') }}"></script>
+                <script src="{{ asset('js/datepicker.js') }}"></script>
+                <script src="{{ asset('js/rating-star.js') }}"></script>
+                <script src="{{ asset('js/range-slider.js') }}"></script>
+                <script src="{{ asset('js/spinner.js') }}"></script>
+                <script src="{{ asset('js/parallax.js') }}"></script>
+                <script src="{{ asset('js/countdown.js') }}"></script>
+                <script src="{{ asset('js/appear.js') }}"></script>
+                <script src="{{ asset('js/prettyPhoto.js') }}"></script>
+                <script src="{{ asset('js/wow-min.js') }}"></script>
+                <script src="{{ asset('js/main.js') }}"></script>
+            {% endblock %}
+
+    </body>
+    {% endblock %}
+</html>

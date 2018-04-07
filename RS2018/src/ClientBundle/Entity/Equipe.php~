@@ -1,0 +1,95 @@
+<?php
+
+namespace ClientBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Equipe
+ *
+ * @ORM\Table(name="equipe", indexes={@ORM\Index(name="ck_entraineur", columns={"id_entraineur"}), @ORM\Index(name="ck_groupe", columns={"id_groupe"})})
+ * @ORM\Entity
+ */
+class Equipe
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=100, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="drapeau", type="string", length=250, nullable=false)
+     */
+    private $drapeau;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="maillot", type="string", length=250, nullable=false)
+     */
+    private $maillot;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="progress", type="string", nullable=true)
+     */
+    private $progress;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pts", type="integer", nullable=true)
+     */
+    private $pts;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qualification", type="string", nullable=false)
+     */
+    private $qualification;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nb_match_joue", type="integer", nullable=false)
+     */
+    private $nbMatchJoue;
+
+    /**
+     * @var \Groupe
+     *
+     * @ORM\ManyToOne(targetEntity="Groupe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_groupe", referencedColumnName="id")
+     * })
+     */
+    private $idGroupe;
+
+    /**
+     * @var \Entraineur
+     *
+     * @ORM\ManyToOne(targetEntity="Entraineur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_entraineur", referencedColumnName="id")
+     * })
+     */
+    private $idEntraineur;
+
+
+}
+

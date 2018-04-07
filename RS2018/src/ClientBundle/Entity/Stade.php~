@@ -1,0 +1,54 @@
+<?php
+
+namespace ClientBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Stade
+ *
+ * @ORM\Table(name="stade")
+ * @ORM\Entity
+ */
+class Stade
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=100, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=100, nullable=false)
+     */
+    private $adresse;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="capacite", type="integer", nullable=false)
+     */
+    private $capacite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=250, nullable=false)
+     */
+    private $image;
+
+
+}
+

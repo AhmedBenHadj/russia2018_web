@@ -1,0 +1,169 @@
+{% extends "@Client/layout.html.twig" %}
+
+
+{% block content %}
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Match Results</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                <li>Match Results</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+
+    <!-- Page Heading banner -->
+    <div class="inner-banner style-2 overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-05.jpg">
+        <div class="container theme-padding">
+            <ul id="match-detail-slider" class="match-detail-slider">
+                {% for tt in tabT %}
+                <li>
+                    <div class="pager-heading match-detail h-white">
+                        <span class="pull-left "><img src="http://localhost/PI/Flags/{{ tt.match.idEquipe1.drapeau }}"
+                                                      class="img-rounded" alt="p1" width="80" height="80">
+                            <p></p>
+                        <h2>{{ tt.match.idEquipe1.nom }}</h2>
+                        </span>
+                        <div class="vs-match-heading position-center-center">
+                            <strong class="vs-match-result">{{ tt.a }}<span>Vs</span>{{ tt.b }}</strong>
+                            <span class="end-time"><i class="fa fa-clock-o"></i>{{ tt.match.time|date('H:i') }}</span>
+                        </div>
+                        <span class="pull-right"><img src="http://localhost/PI/Flags/{{ tt.match.idEquipe2.drapeau  }}"
+                                                      class="img-rounded" alt="p1" width="80" height="80">
+                            <p></p>
+                        <h2>{{ tt.match.idEquipe2.nom }}</h2>
+                        </span>
+                    </div>
+                </li>
+                    {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading banner -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Match Result -->
+        <div class="theme-padding white-bg">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Match Result Contenet -->
+                    <div class="col-lg-9 col-sm-8">
+
+                        <!-- Matches Result Shedule -->
+                        <div class="matches-dates-shedule style-2">
+
+                            <div class="result-top-bar">
+                                <span class="pull-left">Match Score</span>
+
+                                <span class="pull-right">Today</span>
+
+                            </div>
+
+                            <ul>
+
+
+                                {% for t in tab %}
+                                <li>
+
+                                    <span class="pull-left">
+                                        <img src="http://localhost/PI/Flags/{{ t.match.idEquipe1.drapeau  }}"
+                                             class="img-rounded" alt="p1" width="60" height="60">
+                                        <h3>{{ t.match.idEquipe1.nom }}</h3>
+                                    </span>
+
+
+                                    <div class="detail">
+                                        <span class="result-vs">{{ t.a }} - {{ t.b }}</span>
+
+                                        <div class="location-marker">
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>{{  t.match.time.format('H:i') }}</li>
+                                                <li><i class="fa fa-map-marker"></i>{{  t.match.idStade.nom }}</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <span class="pull-right">
+                                        <img src="http://localhost/PI/Flags/{{ t.match.idEquipe2.drapeau  }}"
+                                             class="img-rounded" alt="p1" width="60" height="60">
+
+                                        <h3>{{  t.match.idEquipe2.nom  }}</h3>
+                                    </span>
+
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+
+                        </div>
+                        <!-- Matches Result Shedule -->
+
+                    </div>
+                    <!-- Match Result Contenet -->
+
+                    <!-- Aside -->
+                    <div class="col-lg-3 col-sm-4">
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <a href="#"><img src="{{ asset('images/adds-02.jpg') }}" alt=""></a>
+                        </div>
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <h3><span>Popular News</span></h3>
+                            <div class="Popular-news">
+                                <ul>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-01.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-02.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-03.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-04.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <h3><span>Archive</span></h3>
+                            <div id="calendar" class="calendar"></div>
+                        </div>
+                        <!-- Aside Widget -->
+
+                    </div>
+                    <!-- Aside -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Match Result -->
+
+    </main>
+    <!-- Main Content -->
+
+
+
+{% endblock %}

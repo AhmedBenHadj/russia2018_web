@@ -1,0 +1,129 @@
+<?php
+
+namespace ClientBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Match2018
+ *
+ * @ORM\Table(name="match_2018", indexes={@ORM\Index(name="ck_equipe_1", columns={"id_equipe_1"}), @ORM\Index(name="ck_equipe_2", columns={"id_equipe_2"}), @ORM\Index(name="ck_stade", columns={"id_stade"}), @ORM\Index(name="id", columns={"id"}), @ORM\Index(name="id_groupe", columns={"id_groupe"})})
+ * @ORM\Entity
+ */
+class Match2018
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="time", type="time", nullable=false)
+     */
+    private $time;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="duree", type="integer", nullable=false)
+     */
+    private $duree;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nombre_spectateur", type="integer", nullable=false)
+     */
+    private $nombreSpectateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", nullable=true)
+     */
+    private $type;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="cote_eq1", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $coteEq1;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="cote_eq2", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $coteEq2;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="cote_nul", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $coteNul;
+
+    /**
+     * @var \Groupe
+     *
+     * @ORM\ManyToOne(targetEntity="Groupe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_groupe", referencedColumnName="id")
+     * })
+     */
+    private $idGroupe;
+
+    /**
+     * @var \Equipe
+     *
+     * @ORM\ManyToOne(targetEntity="Equipe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_equipe_1", referencedColumnName="id")
+     * })
+     */
+    private $idEquipe1;
+
+    /**
+     * @var \Stade
+     *
+     * @ORM\ManyToOne(targetEntity="Stade")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_stade", referencedColumnName="id")
+     * })
+     */
+    private $idStade;
+
+    /**
+     * @var \Equipe
+     *
+     * @ORM\ManyToOne(targetEntity="Equipe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_equipe_2", referencedColumnName="id")
+     * })
+     */
+    private $idEquipe2;
+
+
+}
+

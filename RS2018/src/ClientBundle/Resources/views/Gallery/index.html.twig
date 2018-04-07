@@ -1,0 +1,141 @@
+{% extends "@Client/layout.html.twig" %}
+{% block content %}
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Gallery</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li>Gallery</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <main class="main-content">
+        <div class="theme-padding white-bg">
+            <div class="container">
+                {% if is_granted('ROLE_MEMBRE') %}
+                    <div class="leave-a-reply">
+                        <h2>Ajouter</h2>
+                        <form name="myForm" action="{{ path('index_galerie') }}" class="row" enctype="multipart/form-data" method="post">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <input required name="titre" type="text" class="form-control" placeholder="Titre">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <table style="padding: 10px 10px">
+                                    <tr>
+                                        <td><input id="image" name="ghassen" value="image" type="radio" checked></td>
+                                        <td>  Image</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input id="video" name="ghassen" value="video" type="radio"></td>
+                                        <td>  Video</td>
+                                    </tr>
+                                </table>
+                                <div id="test">
+                                    <div class="form-group" id="ghassenimage">
+                                        <input required name="image" type="file" class="form-control" placeholder="Email *" datatype="">
+                                        <i class="fa fa-image"></i>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn red-btn full-width">Send Comments</button>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <textarea required name="description" class="form-control style-d" rows="11" id="comment" placeholder="Write Comments here..."></textarea>
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                {% endif %}
+                <div class="video-gallery">
+                    <div class="row m-0">
+                        <div class="col-sm-12 p-0">
+                            <h2>Video Gallery</h2>
+                        </div>
+
+                        <!-- Video Gallery -->
+                        <div class="row">
+                            <div class="col-sm-7 col-xs-12">
+                                <div class="video-post video">
+                                    <img src="{{ asset('images/video-gallery/img-01.jpg') }}" alt="">
+                                    <span class="play-lable fa fa-video-camera"></span>
+                                    <a class="position-centeriip
+                                    -center play-icon" href="https://www.youtube.com/watch?v=GHkwCNzs-ww" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-xs-12">
+                                <div class="row">
+                                    {% for v in videos %}
+                                        <div class="col-sm-6 col-xs-6 r-full-width">
+                                            <div class="video-post video theme-margin-bottom">
+                                                <img src="{{ asset('images/video-gallery/img-02.jpg') }}" alt="">
+                                                <span class="play-lable fa fa-video-camera"></span>
+                                                <a class="position-center-center play-icon" href="{{ v.Lien }}" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>>
+                <!-- Video Gallery -->
+                <!-- Gallery 3 Column -->
+                <br>
+                <div class="gallery style-2">
+                    <h2>Images</h2>
+                    <div class="row">
+
+                        {% for galerie in galeries %}
+                            <!-- gallery Figure -->
+                            <div class="col-sm-4 col-xs-6 r-full-width">
+
+                                <figure class="gallery-figure">
+                                    <img width="20%"  src="http://localhost/PI/image/{{ galerie.lien }}" alt="">
+                                    <figcaption class="overlay">
+                                        <div class="position-center-center">
+                                            <ul class="btn-list">
+                                                <li><a href="http://localhost/PI/image/{{ galerie.lien }}" data-rel="prettyPhoto[gallery-v2]"><i class="fa fa-search"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                                <div class="gallery-img-heading">
+                                    <h5>{{ galerie.description }}</h5>
+                                </div>
+                            </div>
+                            <!-- gallery Figure -->
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <!-- Gallery 3 Column -->
+            </div>
+        </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        var rad = document.myForm.ghassen;
+        var container = document.getElementById("test");
+        for(var i = 0; i < rad.length; i++) {
+            rad[i].onclick = function() {
+                if(this.value=="image"){
+                    container.innerHTML="<div class=\"form-group\" id=\"ghassenimage\">\n" +
+                        "                                    <input required name=\"image\" type=\"file\" class=\"form-control\" placeholder=\"Email *\" datatype=\"\">\n" +
+                        "                                    <i class=\"fa fa-image\"></i>\n" +
+                        "                                </div>";
+                }else{
+                    container.innerHTML="<div class=\"form-group\" id=\"ghassenvideo\">\n" +
+                        "                                    <input required name=\"video\" type=\"text\" class=\"form-control\" placeholder=\"Titre\">\n" +
+                        "                                    <i class=\"fa fa-video-camera\"></i>\n" +
+                        "                                </div>";
+                }
+            };
+        }
+    </script>
+
+{% endblock %}

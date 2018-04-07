@@ -1,0 +1,71 @@
+{% extends "@Client/layout2.html.twig" %}
+
+
+{% block content %}
+
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Matchs</a> <a href="{{ path('Gestion_Match') }}" class="current">Gestion Matchs</a> </div>
+            <h1 style="text-align: center">Gestion Matchs</h1>
+        </div>
+        <div class="container-fluid">
+            <hr>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="control-group">
+                        <label class="control-label" style="text-align: center">Selectionner type de match :
+                        </label>
+                        <select>
+                            <option>pool</option>
+                        </select>
+
+                    </div>
+
+                    <div class="widget-box">
+
+
+                        <div class="widget-content nopadding">
+
+                            <div class="widget-content nopadding">
+
+
+                            <table class="table table-bordered">
+
+                                <tr>
+                                    <td>Equipe 1</td>
+                                    <td>Equipe 2</td>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Etat</td>
+                                    <td>Modification</td>
+                                    <td>Evenements</td>
+
+                                </tr>
+                                {% for match in matchs %}
+                                <tr>
+
+                                    <td>{{ match.idEquipe1.nom }}</td>
+                                    <td>{{ match.idEquipe2.nom }}</td>
+                                    <td>{{ match.date.format('d/m/Y') }}</td>
+                                    <td>{{ match.time|date('H:i') }}</td>
+                                    <td>{{ match.etat }}</td>
+                                    <td><a href="{{ path('Modifier_Match',{'id':match.id}) }}"><button type="button" class="btn btn-primary">Modifier</button></a></td>
+                                    <td><a href="#"><button type="button" class="btn btn-danger">Ajouter</button></a></td>
+
+
+                                </tr>
+                                {% endfor %}
+
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

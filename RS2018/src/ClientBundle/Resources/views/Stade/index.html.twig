@@ -1,0 +1,159 @@
+{% extends "@Client/layout.html.twig" %}
+
+
+{% block content %}
+    <style>
+        #map,#map2,#map3,#map4 {
+            height: 400px;
+            width: 120%;
+        }
+    </style>
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Match</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                <li>Stades</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Team Width Sidebar -->
+        <div class="team-grid theme-padding white-bg">
+            <div class="container">
+                <h2>Les Stades</h2>
+                <div class="row">
+
+                    <!-- Team Column -->
+                    {% for stade in stades %}
+                    <div class="col-lg-3 col-sm-4 col-xs-6 r-full-width">
+                        <div class="team-column">
+
+                            <img src="http://localhost/PI/image/{{ stade.image  }}" alt="" width="350" height="250" >
+                            <span class="footer-logo"></span>
+                            <div class="team-detail">
+                                <h5><a href="#">{{ stade.nom }}</a></h5>
+                                <span class="desination">Details</span>
+                                <div class="detail-inner">
+                                    <figure class="gallery-figure">
+                                        <img src="http://localhost/PI/image/{{ stade.image }}" alt="" width="50" height="100" >
+                                        <figcaption class="overlay">
+                                            {% if stade.id==1 %}
+                                            <div class="position-center-center" id="map" >
+                                                <ul class="btn-list" id="map">
+                                                    <li>
+                                                           <a href="#"  data-rel="prettyPhoto[gallery-v2]"><i class="fa fa-map-marker"></i>
+                                                            </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            {% endif %}
+                                            {% if stade.id==2 %}
+                                                <div class="position-center-center" id="map2" >
+                                                    <ul class="btn-list" id="map2">
+                                                        <li>
+                                                            <a href="#"  data-rel="prettyPhoto[gallery-v2]"><i class="fa fa-map-marker"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            {% endif %}
+                                            {% if stade.id==3 %}
+                                                <div class="position-center-center" id="map3" >
+                                                    <ul class="btn-list" id="map3">
+                                                        <li>
+                                                            <a href="#"  data-rel="prettyPhoto[gallery-v2]"><i class="fa fa-map-marker"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            {% endif %}
+                                            {% if stade.id==4 %}
+                                                <div class="position-center-center" id="map4" >
+                                                    <ul class="btn-list" id="map4">
+                                                        <li>
+                                                            <a href="#"  data-rel="prettyPhoto[gallery-v2]"><i class="fa fa-map-marker"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            {% endif %}
+
+                                        </figcaption>
+                                    </figure>
+                                    <br>
+                                    <ul>
+                                        <li>Ville</li>
+                                        <li>Capacite</li>
+                                    </ul>
+                                    <ul>
+                                        <li>{{ stade.adresse }}</li>
+                                        <li>{{ stade.capacite }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Team Column -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Team Width Sidebar -->
+
+    </main>
+    <!-- Main Content -->
+    <script>
+        function initMap() {
+            var stade1 = {lat: 54.6982, lng: 20.5339};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: stade1
+            });
+            var marker = new google.maps.Marker({
+                position: stade1,
+                map: map
+            });
+                        //Stade 2
+            var stade2 = {lat: 48.7345, lng: 44.5483};
+            var map2 = new google.maps.Map(document.getElementById('map2'), {
+                zoom: 10,
+                center: stade2
+            });
+            var marker2 = new google.maps.Marker({
+                position: stade2,
+                map: map2
+            });
+            //Stade 3
+            var stade3 = {lat: 53.2781, lng: 50.2389};
+            var map3 = new google.maps.Map(document.getElementById('map3'), {
+                zoom: 10,
+                center: stade3
+            });
+            var marker3 = new google.maps.Marker({
+                position: stade3,
+                map: map3
+            });
+            //Stade 4
+            var stade4 = {lat: 55.8210, lng: 49.1610};
+            var map4 = new google.maps.Map(document.getElementById('map4'), {
+                zoom: 10,
+                center: stade4
+            });
+            var marker4 = new google.maps.Marker({
+                position: stade4,
+                map: map4
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfqMhMcoqniv4GMrB-b4yh6Xu6_xvn7Bg&callback=initMap">
+    </script>
+
+{% endblock %}

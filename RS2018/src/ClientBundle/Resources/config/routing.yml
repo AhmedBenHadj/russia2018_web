@@ -1,0 +1,157 @@
+client_homepage:
+    defaults: { _controller: ClientBundle:Default:index }
+    path:   /
+team:
+    path:     /team
+    defaults: { _controller: ClientBundle:Default:index }
+dashboard:
+    path:     /dashboard
+    defaults: { _controller: ClientBundle:Default:dashboard }
+team-detail:
+    path:     /team-detail
+    defaults: { _controller: ClientBundle:Equipe:detail_equipe }
+team-width-sidebar:
+    path:     /team-width-sidebar
+    defaults: { _controller: ClientBundle:Default:index }
+shop:
+    path:     /shop
+    defaults: { _controller: ClientBundle:Default:index }
+shop-detail:
+    path:     /shop-detail
+    defaults: { _controller: ClientBundle:Default:index }
+cart:
+    path:     /cart
+    defaults: { _controller: ClientBundle:Default:index }
+gallery:
+    path:     /gallery
+    defaults: { _controller: ClientBundle:Default:index }
+blog:
+    path:     /blog
+    defaults: { _controller: ClientBundle:Default:index }
+blog-detail:
+    path:     /blog-detail
+    defaults: { _controller: ClientBundle:Default:index }
+blog-grid-view:
+    path:     /blog-grid-view
+    defaults: { _controller: ClientBundle:Default:index }
+blog-grid-view-2:
+    path:     /blog-grid-view-2
+    defaults: { _controller: ClientBundle:Default:index }
+blog-larg-view:
+    path:     /blog-larg-view
+    defaults: { _controller: ClientBundle:Default:index }
+blog-list-view:
+    path:     /blog-list-view
+    defaults: { _controller: ClientBundle:Default:index }
+point-table:
+    path:     /point-table
+    defaults: { _controller: ClientBundle:Default:index }
+404:
+    path:     /404
+    defaults: { _controller: ClientBundle:Default:index }
+underconstraction:
+    path:     /underconstraction
+    defaults: { _controller: ClientBundle:Default:index }
+contact:
+    path:     /contact
+    defaults: { _controller: ClientBundle:Default:index }
+indexAbonnement:
+    path:     /abonnement
+    defaults: { _controller: ClientBundle:Abonnement:index }
+indexCommentaire:
+    path:     /commentaire
+    defaults: { _controller: ClientBundle:Commentaire:index }
+indexEntraineur:
+    path:     /entraineur
+    defaults: { _controller: ClientBundle:Entraineur:index }
+
+indexEquipe:
+    path:     /equipe
+    defaults: { _controller: ClientBundle:Equipe:detail_equipe }
+
+indexEquipeFantasy:
+    path:     /equipe-fantasy
+    defaults: { _controller: ClientBundle:EquipeFantasy:index }
+indexFichePari:
+    path:     /fiche-pari
+    defaults: { _controller: ClientBundle:FichePari:index }
+indexJoueur:
+    path:     /joueur
+    defaults: { _controller: ClientBundle:Joueur:index }
+
+indexJoueurFantasy:
+    path:     /joueur-fantasy
+    defaults: { _controller: ClientBundle:JoueurFantasy:index }
+indexPari:
+    path:     /pari
+    defaults: { _controller: ClientBundle:Pari:index }
+
+indexPublication:
+    path:     /actualite
+    defaults: { _controller: ClientBundle:Publication:index }
+
+
+
+indexUser:
+    path:     /user
+    defaults: { _controller: ClientBundle:User:index }
+
+index_galerie:
+    path:     /galerie
+    defaults: { _controller: ClientBundle:Gallery:index }
+magalerie:
+    path:     /magalerie
+    defaults: { _controller: ClientBundle:Gallery:magalerie }
+article:
+    path:     /article/{id}
+    defaults: { _controller: ClientBundle:Publication:article }
+index2Publication:
+    path:     /article
+    defaults: { _controller: ClientBundle:Publication:index }
+mesarticle:
+    path:     /mesarticle
+    defaults: { _controller: ClientBundle:Publication:mesarticles }
+Info_equipe:
+    path:     /Equipe/{id}
+    defaults: { _controller: ClientBundle:Equipe:equipe }
+Info_joueur:
+    path:     /Joueur/{id}
+    defaults: { _controller: ClientBundle:Joueur:info }
+tout_les_joueur:
+    path:     /ToutLesJoueur
+    defaults: { _controller: ClientBundle:Joueur:RechercheAjax }
+ajouterPari:
+    path:     /ajouterpari
+    defaults: { _controller: ClientBundle:Pari:Ajouter }
+ajouterFichePari:
+    path:     /Ajouter
+    defaults: { _controller: ClientBundle:FichePari:Ajouter }
+#salim
+match-result:
+    path:     /match-result
+    defaults: { _controller: ClientBundle:Match2018:matchResult }
+match-detail:
+    path:     /match-detail/{id}
+    defaults: { _controller: ClientBundle:Match2018:matchDetail }
+indexGroupe:
+    path:     /groupe
+    defaults: { _controller: ClientBundle:Groupe:index }
+indexMatch2018:
+    path:     /match2018/
+    defaults: { _controller: ClientBundle:Match2018:afficherTout }
+Gestion_Match:
+    path:     /gestionMatchs
+    defaults: { _controller: ClientBundle:Match2018:Gestion_Matchs }
+Modifier_Match:
+    path:     /modifier/{id}
+    defaults: { _controller: ClientBundle:Match2018:ModifierMatch }
+indexStade:
+    path:     /stade
+    defaults: { _controller: ClientBundle:Stade:index }
+
+#remove_trailing_slash:
+#    path: /{url}
+#    defaults: { _controller: ClientBundle:Redirecting:removeTrailingSlash }
+#    requirements:
+#        url: .*/$
+#    methods: [GET]

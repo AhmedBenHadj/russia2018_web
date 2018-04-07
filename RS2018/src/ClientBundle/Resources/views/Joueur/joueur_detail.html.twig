@@ -1,0 +1,179 @@
+{% extends "@Client/layout.html.twig" %}
+{% block content %}
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>{{ joueur.prenom }} {{ joueur.nom }} </h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                <li><a href="{{ path('indexEquipe') }}">Tableau des équipes</a></li>
+                <li>{{ joueur.nom }}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+    <!-- Page Heading banner -->
+    <div class="overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-03.jpg">
+    </div>
+    <!-- Page Heading banner -->
+    <main class="main-content">
+        <div class="team-detail-holder theme-padding white-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-5">
+                        <div class="team-column without-hover">
+                            <img src="http://localhost/Pi/image/{{ joueur.image }}" alt="" height=416 width=269>
+                            <span class="player-number">{{ joueur.poste }}</span>
+                            <div class="team-detail">
+                                <h5>{{ joueur.nom }}</h5>
+                                <span class="desination">{{ joueur.poste }}</span>
+                                <div class="detail-inner">
+                                    <ul>
+                                        <li>nom</li>
+                                        <li>prenom</li>
+                                        <li>age</li>
+                                        <li>poste</li>
+                                        <li>club</li>
+                                        <li>Fallow us on</li>
+                                    </ul>
+                                    <ul>
+                                        <li>{{ joueur.nom }}</li>
+                                        <li>{{ joueur.prenom }}</li>
+                                        <li>{{ joueur.age }}</li>
+                                        <li>{{ joueur.poste }} </li>
+                                        <li>{{ joueur.club }}</li>
+                                        <li>
+                                            <ul class="social-icons">
+                                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                                <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-7">
+
+                        <!-- Team Detail Content -->
+                        <div class="team-detail-content theme-padding-bottom">
+                            <h2>{{ joueur.club }}</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eaque ut veritatis voluptas voluptatum! Animi consequuntur eos et quia repellendus vero! Architecto culpa cum dignissimos est facere, mollitia nesciunt repellendus?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem blanditiis culpa deserunt dicta facilis fugit impedit minima perspiciatis unde! Ad autem beatae fuga in iste iure porro quia quod.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorem impedit, necessitatibus pariatur repellat rerum vitae. Aliquid dolor ea illum incidunt ipsam magni minus nihil numquam provident recusandae similique, soluta.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis natus, provident repellat sed vel voluptatum! Doloribus est, officia! Aperiam consequuntur ducimus eos explicabo minima minus nulla obcaecati quos, reprehenderit?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, adipisci, animi beatae blanditiis cum cupiditate dolor eligendi expedita impedit iste, maxime nemo neque omnis placeat rerum saepe soluta ullam ut?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate dignissimos distinctio eveniet fugit illo, illum qui quisquam unde voluptatum! Autem deserunt dignissimos illum incidunt molestiae omnis quis reiciendis velit?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores consequuntur cupiditate dicta distinctio dolorem dolores, dolorum earum fuga laboriosam neque quasi qui quia quo reprehenderit temporibus voluptates! Adipisci, molestias?
+                            </p>
+                            <div class="tags-holder">
+                                <ul class="tags-list pull-left">
+                                    <li><i class="fa fa-tags"></i>Tags</li>
+                                    <li><a href="{{ path('client_homepage') }}">Scores</a></li>
+                                    <li><a href="{{ path('client_homepage') }}">transfers</a></li>
+                                    <li><a href="{{ path('client_homepage') }}">teams</a></li>
+                                    <li><a href="{{ path('client_homepage') }}">cups</a></li>
+                                </ul>
+                                <ul class="social-icons pull-right">
+                                    <li>Share this post</li>
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if evenements != null %}
+                <div class="palyer-career theme-padding-bottom">
+                    <h2>Parours en coupe du monde</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Temps joué</th>
+                                <th>Match</th>
+                                <th>But</th>
+                                <th>Carton</th>
+                                <th>Minute</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for evenement in evenements %}
+                            <tr>
+                                <td>{{ joueur_p.tempsJoue }}</td>
+                                <td>{{ evenement.idMatch.idEquipe1.nom }} - {{ evenement.idMatch.idEquipe2.nom }}</td>
+                                <td>{{ evenement.but }}</td>
+                                <td>{{ evenement.carton }}</td>
+                                <td>{{ evenement.temps }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <!-- Team Detail Content -->
+            <br>
+            <div class="row">
+                <div class="col-lg-9 col-sm-12 pull-right top-palyer">
+                    <h2>L'équipe de {{ joueur.prenom }} {{ joueur.nom }}</h2>
+                    <div class="row">
+                            <div class="col-lg-3 col-sm-4 col-xs-6 r-full-width">
+                                <div class="team-column">
+                                    <img src="http://localhost/Pi/Flags/{{ joueur.idEquipe.drapeau }}" alt="" width=269 height=419>
+                                    <span class="player-number">{{ joueur.idEquipe.idGroupe.nom }}</span>
+                                    <div class="team-detail">
+                                        <h5><a href="{{ path('Info_equipe',{'id':joueur.idEquipe.id}) }}">{{ joueur.idEquipe.nom }}</a></h5>
+                                        <span class="desination">{{ joueur.idEquipe.nom }}</span>
+                                        <div class="detail-inner">
+                                            <ul>
+                                                <li>progress</li>
+                                                <li>points</li>
+                                                <li>groupe</li>
+                                                <li>entraineur</li>
+                                                <li>nb match joue</li>
+                                                <li>Follow us on</li>
+                                            </ul>
+                                            <ul>
+                                                <li>{{ joueur.idEquipe.progress }}</li>
+                                                <li>{{ joueur.idEquipe.pts }}</li>
+                                                <li>{{ joueur.idEquipe.idGroupe.nom }}</li>
+                                                <li>{{ joueur.idEquipe.idEntraineur.nom }}</li>
+                                                <li>{{ joueur.idEquipe.nbMatchJoue }}</li>
+                                                <li>
+                                                    <ul class="social-icons">
+                                                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                                        <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

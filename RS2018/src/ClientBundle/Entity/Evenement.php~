@@ -1,0 +1,67 @@
+<?php
+
+namespace ClientBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Evenement
+ *
+ * @ORM\Table(name="evenement", indexes={@ORM\Index(name="ck_match", columns={"id_match"}), @ORM\Index(name="ch_joueur_participant", columns={"id_joueur_participant"})})
+ * @ORM\Entity
+ */
+class Evenement
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="carton", type="string", nullable=false)
+     */
+    private $carton;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="but", type="integer", nullable=true)
+     */
+    private $but;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="temps", type="integer", nullable=false)
+     */
+    private $temps;
+
+    /**
+     * @var \JoueurParticipant
+     *
+     * @ORM\ManyToOne(targetEntity="JoueurParticipant")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_joueur_participant", referencedColumnName="id")
+     * })
+     */
+    private $idJoueurParticipant;
+
+    /**
+     * @var \Match2018
+     *
+     * @ORM\ManyToOne(targetEntity="Match2018")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_match", referencedColumnName="id")
+     * })
+     */
+    private $idMatch;
+
+
+}
+

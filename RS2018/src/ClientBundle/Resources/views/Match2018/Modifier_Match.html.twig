@@ -1,0 +1,93 @@
+{% extends "@Client/layout2.html.twig" %}
+
+
+{% block content %}
+
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Gestion Matchs</a> <a href="#" class="current">Modifier Match</a> </div>
+            <h1 style="text-align: center">Modifier Match</h1>
+        </div>
+        <div class="container-fluid">
+            <hr>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                            <h5>Choissisez un match pour le modifier</h5>
+                        </div>
+
+                        <div class="widget-content nopadding">
+
+                            <form action="{{ path('modifier-match') }}" method="POST" class="form-horizontal">
+
+                                <div class="control-group">
+                                    <label class="control-label">Progress :</label>
+                                    <div class="controls">
+                                        {{ form_widget(Form.type) }}
+                                        <button type="submit" class="btn btn-success">Afficher</button>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Equipe 1 :</label>
+                                    <div class="controls">
+                                        {% if Form.idEquipe1 is defined %}
+                                        {{ form_widget(Form.idEquipe1)}}
+                                            <button type="submit" class="btn btn-success">Afficher l'equipe adversaire</button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Equipe 2 :</label>
+                                    <div class="controls">
+
+                                     {% if Form.idEquipe2 is defined %}
+                                        {{ form_widget(Form.idEquipe2) }}
+                                         {% endif %}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Date</label>
+                                    <div class="controls">
+                                        {% if Form.date is defined %}
+                                       {{ form_widget(Form.date) }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Time</label>
+                                    <div class="controls">
+                                        {{ form_widget(Form.time) }}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Etat :</label>
+                                    <div class="controls">
+                                        {{ form_widget(Form.etat) }}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Nombre spectateur:</label>
+                                    <div class="controls">
+                                        {{ form_widget(Form.nombreSpectateur) }}
+                                </div>
+                                </div>
+                                <div class="form-actions">
+                                   <button type="submit" class="btn btn-success">Save</button>
+
+
+                                </div>
+                          </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

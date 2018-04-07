@@ -1,0 +1,85 @@
+<?php
+
+namespace ClientBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Publication
+ *
+ * @ORM\Table(name="publication", indexes={@ORM\Index(name="ck_user", columns={"id_user"})})
+ * @ORM\Entity
+ */
+class Publication
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=100, nullable=false)
+     */
+    private $titre;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_creation", type="date", nullable=false)
+     */
+    private $dateCreation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lien", type="string", length=250, nullable=false)
+     */
+    private $lien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=250, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="liked", type="integer", nullable=true)
+     */
+    private $liked;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="disliked", type="integer", nullable=true)
+     */
+    private $disliked;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+
+}
+

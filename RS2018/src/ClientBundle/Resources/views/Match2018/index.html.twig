@@ -1,0 +1,180 @@
+{% extends "@Client/layout.html.twig" %}
+
+
+{% block content %}
+
+    <script src="{{ asset('js/countOpenC.js') }}"></script>
+
+
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Match</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                <li>Match</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+
+    <!-- Page Heading banner -->
+    <div class="inner-banner style-2 overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-04.jpg">
+        <div class="container">
+            <div class="pager-heading match-detail white-heading">
+                {% for firstM in firstmatch %}
+                <span class="pull-left">
+                    <img src="http://localhost/PI/Flags/{{ firstM.idEquipe1.drapeau }}"
+                         class="img-rounded" alt="p1" width="80" height="80">
+                    <p></p>
+                    <h2 style="color: whitesmoke">{{ firstM.idEquipe1.nom }}</h2>
+                </span>
+
+                <div class="match-vs-heading position-center-center">
+                    <div class="left-tiem-acounter">
+                        <ul id="countdown-3" class="countdown">
+                           {% for date in d %}
+                               {% for heure in H %}
+                                   {% for minute in i %}
+                                       {% for seconde in s %}
+                            <li><span class="days" id="date"></span>D:</li>
+                            <li><span class="hours" id="heure"></span>H:</li>
+                            <li><span class="minutes" id="minute"></span>M:</li>
+                            <li><span class="seconds" id="seconde"></span>S</li>
+                                           {% endfor %}
+                                       {% endfor %}
+                                   {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <span class="result-vs">vs</span>
+                    <div class="location-marker">
+                        <ul>
+                            <li><i class="fa fa-map-marker"></i>{{ firstM.date.format("d/m/Y") }} {{ firstM.time|date('H:i') }}</li>
+                            <li><i class="fa fa-map-marker"></i>{{ firstM.idStade.nom }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="pull-right">
+                    <img src="http://localhost/PI/Flags/{{ firstM.idEquipe2.drapeau }}"
+                         class="img-rounded" alt="p1" width="80" height="80">
+                    <p></p>
+                    <h2 style="color: whitesmoke">{{ firstM.idEquipe2.nom }}</h2>
+
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Page Heading banner -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Match -->
+        <div class="theme-padding white-bg">
+            <div class="container">
+                <div class="row">
+
+                    <!-- match Contenet -->
+                    <div class="matches-shedule-holder">
+                        <div class="col-lg-9 col-sm-8">
+
+                            <!-- Matches Dates Shedule -->
+                            <div class="matches-dates-shedule">
+                                <ul>
+                                    {% for match in matchs %}
+                                    <li>
+                                        <span class="pull-left"><img src="http://localhost/PI/Flags/{{ match.idEquipe1.drapeau }}"
+                                                                     class="img-rounded" alt="p1" width="80" height="80"></span>
+                                        <span class="pull-right"><img src="http://localhost/PI/Flags/{{ match.idEquipe2.drapeau }}"
+                                                                      class="img-rounded" alt="p1" width="80" height="80"></span>
+                                        <div class="detail">
+                                            <a href="{{ path('match-detail',{'id':match.id}) }}">Match Detail<i class="fa fa-angle-double-right"></i></a>
+                                            <strong>{{ match.idEquipe1.nom }}<i class="red-color"> {{ match.date.format("d/m/Y") }} {{ match.time|date('H:i') }} </i>
+                                                {{ match.idEquipe2.nom }}</strong>
+                                            <span class="location-marker"><i class="fa fa-map-marker"></i> {{ match.idStade.nom }}</span>
+
+                                        </div>
+
+                                    </li>
+                                    {% endfor %}
+
+
+
+
+                                </ul>
+                            </div>
+                            <!-- Matches Dates Shedule -->
+
+                            <!-- Pagination -->
+                            <div class="pagination-holder">
+                                <ul class="pagination">
+                                    <li><a href="#"><i class="fa fa-angle-double-left"></i>Previous</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#"><i class="fa fa-ellipsis-h"></i></a></li>
+                                    <li><a href="#">28</a></li>
+                                    <li><a href="#">Next<i class="fa fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Pagination -->
+
+                        </div>
+                    </div>
+                    <!-- match Contenet -->
+
+                    <!-- Aside -->
+                    <div class="col-lg-3 col-sm-4">
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <a href="#"><img src="{{ asset('images/adrussia.jpg') }}" alt="" class="img-rounded"></a>
+                        </div>
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <h3><span>Les derniers evenements</span></h3>
+                            <div class="Popular-news">
+                                <ul>
+                                    {% for event in evenements %}
+                                    <li>
+                                        <img src="http://localhost/PI/Flags/{{ event.idJoueurParticipant.idJoueur.idEquipe.drapeau }}" alt="" width="60" height="50" class="img-rounded">
+                                        <h5><a href="#">{{ event.idJoueurParticipant.idJoueur.nom }}  {{ event.idJoueurParticipant.idJoueur.prenom }}</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>a marqué un but a la minute {{ event.temps }}' </span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Aside Widget -->
+                        <!-- Aside Widget -->
+                        <div class="aside-widget" >
+                            <h3><span>Archive</span></h3>
+                            <div id="calendar-h" ></div>
+                        </div>
+                        <!-- Aside Widget -->
+
+                    </div>
+                    <!-- Aside -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Match -->
+
+    </main>
+
+
+
+    <!-- Main Content -->
+{% endblock %}
+
+
+
+

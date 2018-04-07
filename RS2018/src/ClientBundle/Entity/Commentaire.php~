@@ -1,0 +1,67 @@
+<?php
+
+namespace ClientBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Commentaire
+ *
+ * @ORM\Table(name="commentaire", indexes={@ORM\Index(name="id_publication", columns={"id_publication"}), @ORM\Index(name="id_user", columns={"id_user"})})
+ * @ORM\Entity
+ */
+class Commentaire
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=250, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_creation", type="date", nullable=false)
+     */
+    private $dateCreation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="likedislike", type="string", nullable=false)
+     */
+    private $likedislike;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
+
+    /**
+     * @var \Publication
+     *
+     * @ORM\ManyToOne(targetEntity="Publication")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_publication", referencedColumnName="id")
+     * })
+     */
+    private $idPublication;
+
+
+}
+

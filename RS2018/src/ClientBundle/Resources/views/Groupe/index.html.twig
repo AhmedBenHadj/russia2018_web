@@ -1,0 +1,205 @@
+{% extends "@Client/layout.html.twig" %}
+
+
+{% block content %}
+
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Match</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                <li>Groupes</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+    <!-- Page Heading banner -->
+    <div class="inner-banner style-2 overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-05.jpg">
+        <div class="container theme-padding">
+            <ul id="match-detail-slider" class="match-detail-slider">
+                {% for eq in tabqual %}
+                    <li>
+                        <div class="pager-heading match-detail h-white">
+                        <span class="pull-left ">
+                        <h2>Groupe {{ eq.nom }}</h2>
+                        </span>
+                            <div class="vs-match-heading position-center-center ">
+                                <ul>
+                                    {% for r in eq %}
+                                    {% for s in r %}
+                                    {% for j in s %}
+                                <li><br>
+                                    <img src="http://localhost/PI/Flags/{{ j.drapeau }}"
+                                         class="img-rounded" alt="p1" width="80" height="80">
+                                    <br>
+                                    <h3> {{ j.nom }} </h3>
+
+
+                                </li>
+
+                                    {% endfor %}
+                                    {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <span class="pull-right">
+                                <h3>Les Equipes Qualifiés</h3>
+                        </span>
+                        </div>
+                    </li>
+            {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading banner -->
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Match -->
+        <div class="theme-padding white-bg">
+            <div class="container">
+                <div class="row">
+
+                    <!-- match Contenet -->
+
+                    <div class="matches-shedule-holder">
+                        <div class="col-lg-9 col-sm-8">
+                            {% for t in tab %}
+                            <div class="result-top-bar">
+                                <span class="pull-left">Groupe {{ t.nom }}</span>
+
+                            </div>
+
+
+                            <!-- Matches Dates Shedule -->
+                            <div class="matches-dates-shedule">
+                                <ul>
+                                    {% for r in t %}
+                                    {% for s in r %}
+                                    {% for j in s %}
+                                        <li>
+
+                                        <span class="pull-left"><img src="http://localhost/PI/Flags/{{ j.idEquipe1.drapeau  }}"
+                                                                     class="img-rounded" alt="p1" width="80" height="80"></span>
+                                            <span class="pull-right"><img src="http://localhost/PI/Flags/{{ j.idEquipe2.drapeau  }}"
+                                                                          class="img-rounded" alt="p1" width="80" height="80"></span>
+                                            <div class="detail">
+                                                <a href="{{ path('match-detail',{'id':j.id}) }}">Match Detail<i class="fa fa-angle-double-right"></i></a>
+                                                <strong>{{ j.idEquipe1.nom }}<i class="red-color"> {{ j.date.format("d/m/Y") }} {{ j.time|date('H:i') }} </i>
+                                                    {{ j.idEquipe2.nom }}</strong>
+                                                <span class="location-marker"><i class="fa fa-map-marker"></i> {{ j.idStade.nom }}</span>
+
+                                            </div>
+
+                                        </li>
+                                    {% endfor %}
+                                    {% endfor %}
+                                    {% endfor %}
+
+
+                                    <!--<li>
+                                        <span class="pull-left"><img src="{{ asset('images/matches-logo/img-03.png') }}" alt=""></span>
+                                        <span class="pull-right"><img src="{{ asset('images/matches-logo/img-04.png') }}" alt=""></span>
+                                        <div class="detail">
+                                            <a href="#">Match Detail<i class="fa fa-angle-double-right"></i></a>
+                                            <strong>southampton<i class="red-color"> 6 Feb 2016 15:00</i> liverpool</strong>
+                                            <span class="location-marker"><i class="fa fa-map-marker"></i>3358 Evergreen Lane England</span>
+                                        </div>
+                                    </li>-->
+
+
+                               </ul>
+                            </div>
+
+                            {% endfor %}
+
+
+                            <!-- Matches Dates Shedule -->
+
+                            <!-- Pagination -->
+                            <div class="pagination-holder">
+                                <ul class="pagination">
+                                    <li><a href="#"><i class="fa fa-angle-double-left"></i>Previous</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#"><i class="fa fa-ellipsis-h"></i></a></li>
+                                    <li><a href="#">28</a></li>
+                                    <li><a href="#">Next<i class="fa fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Pagination -->
+
+
+                        </div>
+
+
+                    </div>
+                    <!-- match Contenet -->
+
+                    <!-- Aside -->
+                    <div class="col-lg-3 col-sm-4">
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <a href="#"><img src="{{ asset('images/adds-02.jpg') }}" alt=""></a>
+                        </div>
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <h3><span>Popular News</span></h3>
+                            <div class="Popular-news">
+                                <ul>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-01.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-02.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-03.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('images/popular-news/img-04.jpg') }}" alt="">
+                                        <h5><a href="#">Two touch penalties, imaginary cards</a></h5>
+                                        <span class="red-color"><i class="fa fa-clock-o"></i>22 Feb, 2016</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <h3><span>Archive</span></h3>
+                            <div id="calendar" class="calendar"></div>
+                        </div>
+                        <!-- Aside Widget -->
+
+                    </div>
+                    <!-- Aside -->
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Match -->
+
+    </main>
+
+    <!-- Main Content -->
+
+
+{% endblock %}

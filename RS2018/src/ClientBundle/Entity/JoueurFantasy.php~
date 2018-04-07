@@ -1,0 +1,60 @@
+<?php
+
+namespace ClientBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * JoueurFantasy
+ *
+ * @ORM\Table(name="joueur_fantasy", indexes={@ORM\Index(name="id_joueur", columns={"id_joueur"}), @ORM\Index(name="id_equipe", columns={"id_equipe"})})
+ * @ORM\Entity
+ */
+class JoueurFantasy
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="etat", type="integer", nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="points", type="integer", nullable=false)
+     */
+    private $points;
+
+    /**
+     * @var \EquipeFantasy
+     *
+     * @ORM\ManyToOne(targetEntity="EquipeFantasy")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_equipe", referencedColumnName="id")
+     * })
+     */
+    private $idEquipe;
+
+    /**
+     * @var \Joueur
+     *
+     * @ORM\ManyToOne(targetEntity="Joueur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_joueur", referencedColumnName="id")
+     * })
+     */
+    private $idJoueur;
+
+
+}
+

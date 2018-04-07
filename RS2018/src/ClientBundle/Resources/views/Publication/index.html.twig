@@ -1,0 +1,128 @@
+{% extends "@Client/layout.html.twig" %}
+
+
+{% block content %}
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Actualite</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li>Actualite</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+    <!-- Page Heading banner -->
+    <div class="overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="{{ asset('images/inner-banner/img-01.jpg') }}">
+    </div>
+    <!-- Page Heading banner -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Blog -->
+        <div class="theme-padding white-bg">
+            <div class="container">
+                {% if is_granted('ROLE_JOURNALISTE') %}
+                <!-- Leave a Reply  -->
+                <div class="leave-a-reply">
+                    <h2>Ajouter</h2>
+                    <form action="{{ path('indexPublication') }}" class="row" enctype="multipart/form-data" method="post">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input name="titre" type="text" class="form-control" placeholder="Titre">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="form-group">
+                                <input name="image" type="file" class="form-control" placeholder="Email *" datatype="">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <button type="submit" class="btn red-btn full-width">Send Comments</button>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <textarea name="description" class="form-control style-d" rows="11" id="comment" placeholder="Write Comments here..."></textarea>
+                                <i class="fa fa-pencil-square-o"></i>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Leave a Reply  -->
+                {% endif %}
+                <!-- Blog Grid View -->
+                <div class="blog-grid-view style-2">
+                    <div class="row">
+                        {% for article in pagination %}
+                            {% if article.id %}
+                                <!-- Post Img -->
+                                <div class="col-lg-4 col-xs-12">
+                                    <div class="blog-grid-figure">
+                                        <!-- Post Img -->
+                                        <div class="large-post-img">
+                                            <img  src="http://localhost/PI/image/{{ article.lien }}" alt="">
+                                        </div>
+                                        <!-- Post Img -->
+
+                                        <!-- Post Detail -->
+
+                                        <div class="large-post-detail style-3">
+                                            <span class="red-color">{{ article.idUser.username }}</span>
+                                            <h2><a href="{{ path('article',{'id':article.id}) }}">{{ article.titre }}</a></h2>
+                                            <p>{{ article.description }}</p>
+                                        </div>
+                                        <!-- Post Detail -->
+
+                                        <!-- Post Detail Bottom -->
+                                        <div class="detail-btm">
+                                            <span>{{ article.dateCreation|date('Y-m-d') }} </span>
+
+                                        </div>
+                                        <!-- Post Detail Bottom -->
+
+                                    </div>
+                                </div>
+                                <!-- Post Img -->
+                            {% else %}
+                                <!-- Post Img -->
+                                <div class="col-lg-4 col-xs-12">
+                                    <div class="blog-grid-figure">
+                                        <!-- Post Img -->
+                                        <div class="large-post-img">
+                                            {% if article.lien %}
+                                            <img src="{{ article.lien }}" alt="">
+                                            {% else %}
+                                                <img src="{{ asset('images/tweet.jpg') }}" alt="">
+                                            {% endif %}
+                                        </div>
+                                        <!-- Post Img -->
+                                        <!-- Post Detail Bottom -->
+                                        <!-- Post Detail -->
+
+                                        <div class="large-post-detail style-3">
+                                            <span class="red-color">{{ article.idUser.username }}</span>
+                                            <p>{{ article.description }}</p>
+                                        </div>
+                                        <!-- Post Detail -->
+                                        <!-- Post Detail Bottom -->
+
+                                    </div>
+                                </div>
+                                <!-- Post Img -->
+                            {% endif %}
+
+                        {% endfor %}
+                        <div class="navigation">
+                            {{ knp_pagination_render(pagination) }}
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Grid View -->
+
+            </div>
+        </div>
+        <!-- Blog -->
+
+    </main>
+    <!-- Main Content -->
+{% endblock %}

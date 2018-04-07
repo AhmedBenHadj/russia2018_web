@@ -1,0 +1,243 @@
+{% extends "@Client/layout.html.twig" %}
+
+
+{% block content %}
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Shop</h2>
+            <ul class="breadcrumbs">
+                <li><a href="#">Home</a></li>
+                <li>Shop</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+
+    <!-- Page Heading banner -->
+    <div class="overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-04.jpg">
+    </div>
+    <!-- Page Heading banner -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Shop Detail -->
+        <div class="theme-padding white-bg">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Shop Content -->
+                    <div class="col-lg-9 col-sm-8 products-content-holder">
+
+                        <!-- Full Width -->
+
+                        <!-- Full Width -->
+
+                        <!-- Products -->
+                        <div class="shop-holder theme-padding-bottom">
+                            <div class="row">
+
+                                <!-- Product Column -->
+                                <div class="upcoming-fixture">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="skan">
+                                            <tr>
+                                                <th>Equipe 1</th>
+                                                <th>Equipe 2</th>
+                                                <th>1</th>
+                                                <th>X</th>
+                                                <th>2</th>
+                                                <th>Date</th>
+                                            </tr>
+                                            {% for match in matchs %}
+                                            <tr>
+
+                                                <td>
+                                                    <div class="logo-width-name"><img src="{{ asset('images/team-logos-small/img-01.png') }}" alt="">{{ match.idEquipe1.nom }}</div>
+                                                </td>
+                                                <td>
+                                                    <div class="logo-width-name" value=""><img src="{{ asset('images/team-logos-small/img-02.png') }}" alt="">{{ match.idEquipe2.nom }}</div>
+                                                </td>
+                                                <td>
+                                                    <input type="button" class="btn-danger" id="{{ match.id }}{{ match.idEquipe1.nom }}" value="{{ match.coteEq1 }}" onclick="myfunction(this.id,this.value,this.title,this.placeholder);" title="{{ match.idEquipe2.nom }}" placeholder="1">
+                                                    <script type="text/javascript">
+                                                    </script>
+                                                </td>
+                                                <td>
+                                                    <input type="button" class="btn-danger" id="{{ match.id }}" value="{{ match.coteNul }}" onclick="myfunction(this.id,this.value,this.title,this.placeholder);" title="{{ match.idEquipe1.nom }}" placeholder="{{ match.idEquipe2.nom }}">
+                                                </td>
+                                                <td>
+                                                    <input type="button" class="btn-danger" id="{{ match.id }}{{ match.idEquipe2.nom }}" value="{{ match.coteEq2 }}" onclick="myfunction(this.id,this.value,this.title,this.placeholder);" title="{{ match.idEquipe1.nom }}" placeholder="2">
+                                                </td>
+                                                <td class="logo-width-name"><span>{{ match.date.format('d/m/Y') }}-{{ match.time|date('H:i') }}</span></td>
+                                                {% endfor %}
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Product Column -->
+
+                            </div>
+                        </div>
+                        <!-- Products -->
+
+                        <!-- Pagination -->
+                       
+                        <!-- Pagination -->
+
+                    </div>
+                    <!-- Shop Content -->
+
+                    <!-- Aside -->
+                    <div class="col-lg-3 col-sm-4">
+
+                        <!-- Aside Widget -->
+                        <div class="aside-widget style-2">
+                            <h3>Vos Paris</h3>
+                            <div class="shopping-cart-widget">
+                                <form method="post" action="{{ path('ajouterFichePari') }} ">
+                                    <div id="sk">
+
+                                    </div>
+
+                                <ul>
+                                </ul>
+                                <div class="total-price">
+                                    <span class="pull-left"><input type="checkbox" id="simple" onclick="simplefunction();">Simple</span>
+
+                                    <span class="pull-right"><input type="checkbox" id="multiple" onclick="multiplefunction()">Multiple</span><br>
+                                    <span class="pull-left"><input type="nsumber" placeholder="Mise" hidden id="mise"></span><br><br>
+                                    <span class="pull-right"><p id="misetext" hidden>Votre Mise</p><input type="number" id="misetotal" name="misetotal" onkeyup="calculfunction()" hidden></span><br>
+                                    <span class="pull-right"><p id="cotetext" hidden>Côte totale</p><input type="text" id="cote" name="cote" hidden  readonly></span><br><br>
+                                    <span class="pull-right"><p id="gaintext" hidden>Gains totaux</p><input type="text" id="gain" name="gain" hidden readonly></span>
+                                </div>
+                                <button type="submit" class="btn red-btn full-width" id="validerm" name="multiple" href="#" hidden>Valider ma fiche de pari</button>
+                                    <button type="submit" class="btn red-btn full-width" id="validers" name="simple" href="#" hidden>Valider mes paris</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+
+                        <!-- Aside Widget -->
+
+                    </div>
+                    <!-- Aside -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Shop Detail -->
+
+    </main>
+    <!-- Main Content -->
+    <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+    <script type="text/javascript">
+        $("#validerm").hide();
+        $("#validers").hide();
+        var $c=1;
+function myfunction(id,value,title,placeholder){
+    $skander = id;
+    $ghassen = value;
+
+    var withNoDigits = id.replace(/[0-9]/g, '');
+    if (withNoDigits == '') {
+        $("#sk").append("<p id="+"e"+$skander+">"+"<input type='text' name='idmatch[]' value="+id+" hidden> "+"<input type='text' name='cotes[]' value="+value+" hidden>"+"<input type='text' name='sresultats[]' value='X' hidden>   Match :  "+title+"   vs    "+placeholder+"    "+"<br>"+"     Resultat:        "+"X"+ "<br>"+"   Cote :  "+value+"<br>"+"<button class='btn-primary' id="+"b"+$skander+" value='"+$ghassen+"' onclick='retirerpari($skander,this.id,this.value)'>Retirer</button>"+"<input name='amisesimple[]' type=number placeholder='Mise' onkeyup='calculsimple($ghassen,this.id)' id ="+"m"+$skander+" class='misesimple' value="+this.value+" title="+value+"   hidden>"+"<br>"+"<input name='againsimple[]' type=text placeholder='Gain' class='gainsimple' id="+"g"+$skander+" hidden readonly>"+
+            "</p>");
+    }
+
+    else {
+        if(placeholder=="1") {
+            $("#sk").append("<p id="+"e"+$skander+">" + "<input type='text' name='idmatch[]' value="+id+" hidden> "+"<input type='text' name='cotes[]' value="+value+" hidden>"+"<input type='text' name='sresultats[]' value='1' hidden>     Match :  " + withNoDigits + "   vs    " + title + "    " + "<br>" + "     Resultat:        " + placeholder + "<br>" + "   Cote :  " + value +"<br>"+"<button class='btn-primary'  id="+"b"+$skander+" value='"+$ghassen+"'  onclick='retirerpari($skander,this.id)'>Retirer</button>"+ "<input name='amisesimple[]' type=number placeholder='Mise'  onkeyup='calculsimple($ghassen,this.id)' id ="+"m"+$skander+" class='misesimple' value="+this.value+" title="+value+" hidden>" + "<br>"+"<input name='againsimple[]' type=text placeholder='Gain' class='gainsimple' id="+"g"+$skander+" hidden readonly>"+"</p>");
+        }
+        else if(placeholder=="2"){
+            $("#sk").append("<p id="+"e"+$skander+">" + "<input type='text' name='idmatch[]' value="+id+" hidden> "+"<input type='text' name='cotes[]' value="+value+" hidden>"+"<input type='text' name='sresultats[]' value='2' hidden>     Match :  " + title  + "   vs    " +withNoDigits + "    " + "<br>" + "     Resultat:        " + placeholder + "<br>" + "   Cote :  " + value +"<br>"+"<button class='btn-primary'  id="+"b"+$skander+"  value='"+$ghassen+"' onclick='retirerpari($skander,this.id)'>Retirer</button>"+"<input name='amisesimple[]' type=number placeholder='Mise' onkeyup='calculsimple($ghassen,this.id)' id ="+"m"+$skander+" class='misesimple' value="+this.value+" title="+value+" hidden>" + "<br>"+"<input name='againsimple[]' type=text placeholder='Gain' class='gainsimple' id="+"g"+$skander+" hidden readonly>"+ "</p>");
+        }
+    }
+
+ $c*=value;
+    $("#cote").val($c);
+    document.getElementById("cote").value=$c;
+    $g =document.getElementById("cote").value;
+    $m=$("#misetotal").val();
+    $("#gain").val($g*$m);
+
+}
+
+function simplefunction(){
+
+    if($('#simple').is(':checked')){
+        $(".misesimple").show();
+        $(".gainsimple").show();
+        $("#multiple").attr("disabled", true);
+        $("#validerm").hide();
+        $(".btn-select").show();
+        $("#validers").show();
+    }
+    else{
+        $("#multiple").attr("disabled", false);
+        $(".btn-select").show();
+        $("#validers").hide();
+    }
+
+}
+
+function multiplefunction(){
+
+    if($('#multiple').is(':checked')){
+        $("#simple").attr("disabled", true);
+        $(".misesimple").hide();
+        $(".gainsimple").hide();
+        $("#cotetext").show();
+        $("#gaintext").show();
+        $("#misetotal").show();
+        $("#cote").show();
+        $("#gain").show();
+        $("#misetext").show();
+        $("#validerm").show();
+        $(".btn-select").hide();
+        $("#validers").hide();
+    }
+    else{
+        $("#simple").attr("disabled", false);
+        $("#misetotal").hide();
+        $("#cote").hide();
+        $("#gain").hide();
+        $("#cotetext").hide();
+        $("#gaintext").hide();
+        $("#misetext").hide();
+        $("#validerm").hide();
+        $("#validers").hide();
+        $(".btn-select").hide();
+    }
+
+
+}
+ function calculfunction(){
+     $g=$("#cote").val();
+     $m=$("#misetotal").val();
+     $("#gain").val($g*$m);
+ }
+
+ function calculsimple(value,id){
+    var gain=id.replace("m","g");
+    var cote=document.getElementById(id).title;
+    var mise=document.getElementById(id).value;
+     document.getElementById(gain).value=cote*mise;
+
+ }
+
+ function retirerpari(id,value,cote){
+    var effacer=value.replace("b","e");
+document.getElementById(effacer).remove();
+document.getElementById("cote").value/=cote;
+$c /= cote;
+ }
+    </script>
+{% endblock %}

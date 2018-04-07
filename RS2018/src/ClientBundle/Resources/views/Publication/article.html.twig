@@ -1,0 +1,156 @@
+{% extends "@Client/layout.html.twig" %}
+{% block content %}
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Article</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li>Article</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+    <!-- Page Heading banner -->
+    <div class="overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-07.jpg">
+    </div>
+    <!-- Page Heading banner -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Blog Detail -->
+        <div class="theme-padding white-bg">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Blog Content -->
+                    <div class="col-lg-9 col-md-9 col-sm-7 col-xs-12">
+                        <!-- Blog detail -->
+                        <div class="blog-detail-holder">
+                            <div class="author-header">
+                                <h2>{{ article.titre }}</h2>
+                                <div class="aurhor-img-name pull-left">
+                                    <img width="25%" src="http://localhost/PI/image/{{ article.idUser.image }}" alt="">
+                                    <strong>by <i class="red-color">{{ article.idUser.username }}</i></strong>
+                                    <span>{{ article.dateCreation|date('Y-m-d') }} </span>
+                                </div>
+                            </div>
+                            <article>
+                                <p>{{ article.description }}</p>
+                            </article>
+                            <div class="blog-detail">
+                                <figure>
+                                    <img src="http://localhost/PI/image/{{ article.lien }}" alt="">
+                                </figure>
+
+                            </div>
+
+                            <div class="next-prev-option">
+                                {% if pre %}
+                                    <a href="{{ path('article',{'id':pre.id}) }}" class="prev-blog pull-left">
+                                        <img width="50%" src="http://localhost/PI/image/{{ pre.lien }}" alt="">
+                                        <span><i class="fa fa-angle-left"></i>Previous Post</span>
+                                        <h5>{{ pre.titre }}</h5>
+                                        <span class="m-0">{{ pre.dateCreation|date('Y-m-d') }}</span>
+                                    </a>
+                                {% endif %}
+                                {% if next %}
+                                    <a href="{{ path('article',{'id':next.id}) }}" class="next-blog pull-right">
+                                        <img width="50%" src="http://localhost/PI/image/{{ next.lien }}" alt="">
+                                        <span>Next Post<i class="fa fa-angle-right"></i></span>
+                                        <h5>{{ next.titre }}</h5>
+                                        <span class="m-0">{{ next.dateCreation|date('Y-m-d') }}</span>
+                                    </a>
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+                        <!-- Blog Detail -->
+                        <!-- Comment Section -->
+                        <div class="comment-holder theme-padding-bottom">
+                            <h2>Latest comments</h2>
+                            <ul>
+                                {% for c in comments %}
+                                    <li>
+                                        <img width="5%" class="position-center-x" src="http://localhost/PI/image/{{ c.idUser.image }}" alt="">
+                                        <div class="comment-detail">
+                                            <h5><a href="#">{{ c.idUser.username }}</a></h5>
+                                            <span>{{ c.dateCreation|date('Y-m-d') }}</span>
+                                            <p>{{ c.description }}</p>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                        <!-- Comment Section -->
+
+                        <!-- Leave a Reply  -->
+                        <div class="leave-a-reply">
+                            <h2>Leave a Reply</h2>
+                            <form class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Name">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Email *">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Phone">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <button class="btn red-btn full-width">Send Comments</button>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <textarea class="form-control style-d" rows="11" id="comment" placeholder="Write Comments here..."></textarea>
+                                        <i class="fa fa-pencil-square-o"></i>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Leave a Reply  -->
+                    </div>
+                    <!-- Blog Content -->
+                    <!-- Aside -->
+                    <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
+
+                        <!-- Search Bar -->
+                        <div class="aside-search-bar">
+                            <input class="form-control" type="text" placeholder="Search...">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                        <!-- Search Bar -->
+                        <!-- Aside Widget -->
+                        <div class="aside-widget">
+                            <h3><span>Tweet</span></h3>
+                            <div class="twitter-list">
+                                <ul>
+                                    {% for t in tw %}
+                                        <li>
+                                            <h5><a href="#"><i class="fa fa-twitter"></i>{{ t.idUser.username }}</a></h5>
+                                            <p>{{ t.description }}</p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Aside Widget -->
+
+                    </div>
+                    <!-- Aside -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Blog Detail -->
+
+    </main>
+    <!-- Main Content -->
+{% endblock %}

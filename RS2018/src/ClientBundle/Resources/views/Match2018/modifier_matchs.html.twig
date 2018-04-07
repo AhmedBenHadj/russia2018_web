@@ -1,0 +1,82 @@
+{% extends "@Client/layout2.html.twig" %}
+
+
+{% block content %}
+
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Gestion Matchs</a> <a href="#" class="current">Modifier Match</a> </div>
+            <h1 style="text-align: center">Modifier Match</h1>
+        </div>
+        <div class="container-fluid">
+            <hr>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                            <h5>Veuillez remplir les informations</h5>
+                        </div>
+
+                            <!--<form action="#" method="POST" class="form-horizontal">-->
+                                {{ form_start(Form, { 'attr': {'class': 'form-horizontal'} }) }}
+
+                                <div class="control-group">
+                                    <label class="control-label">Equipe 1 :</label>
+                                    <div class="controls">
+                                        {% if Form.idEquipe1 is defined %}
+                                            {{ form_widget(Form.idEquipe1)}}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Equipe 2 :</label>
+                                    <div class="controls">
+
+                                        {% if Form.idEquipe2 is defined %}
+                                            {{ form_widget(Form.idEquipe2) }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Date</label>
+                                    <div class="controls">
+                                        {% if Form.date is defined %}
+                                            {{ form_widget(Form.date) }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Time</label>
+                                    <div class="controls">
+                                        {{ form_widget(Form.time) }}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Etat :</label>
+                                    <div class="controls">
+                                        {{ form_widget(Form.etat) }}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Nombre spectateur:</label>
+                                    <div class="controls">
+                                        {{ form_widget(Form.nombreSpectateur) }}
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    {{ form_widget(Form.Save,{ 'attr': {'class': 'btn btn-success'} }) }}
+
+                                </div>
+                            {{ form_end(Form) }}
+                            <!--</form>-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
