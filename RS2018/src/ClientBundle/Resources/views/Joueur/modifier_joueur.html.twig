@@ -1,0 +1,54 @@
+{% extends "@Client/layout2.html.twig" %}
+
+{% block content %}
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Joueurs</a> <a href="{{ path('modifier_joueur') }}" class="current">Gestion Joueur</a> </div>
+            <h1 style="text-align: center">Gestion Joueur</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-content nopadding">
+                        <div class="widget-content nopadding">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Age</th>
+                                    <th>Equipe</th>
+                                    <th>Poste</th>
+                                    <th>Numero</th>
+                                    <th>Image</th>
+                                    <th>PosteF</th>
+                                    <th>Prix</th>
+                                    <th>Modifier</th>
+                                    <th>Supprimer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for joueur in joueurs %}
+                                    <tr>
+                                        <td>{{ joueur.nom }}</td>
+                                        <td>{{ joueur.prenom }}</td>
+                                        <td>{{ joueur.age }}</td>
+                                        <td>{{ joueur.idEquipe.nom }}</td>
+                                        <td>{{ joueur.poste }}</td>
+                                        <td>{{ joueur.numero }}</td>
+                                        <td>{{ joueur.image }}</td>
+                                        <td>{{ joueur.postef }}</td>
+                                        <td>{{ joueur.prix }}</td>
+                                        <td><a href="{{ path('modifier_joueur_id',{'id':joueur.id}) }}">modifier</a></td>
+                                        <td><a href="{{ path('Delete_joueur',{'id':joueur.id}) }}">supprimer</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

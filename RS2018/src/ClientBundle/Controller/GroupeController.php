@@ -37,5 +37,4 @@ class GroupeController extends Controller
             'tab'=>$tab,'matchs'=>$matchs,'tabqual'=>$tabqual // ...
         ));
     }
-
 }

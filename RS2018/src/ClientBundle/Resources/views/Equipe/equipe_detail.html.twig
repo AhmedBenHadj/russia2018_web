@@ -24,7 +24,7 @@
                     {% for equipe in equipes %}
                     <div class="col-lg-3 col-sm-4 col-xs-6 r-full-width">
                         <div class="team-column">
-                            <img src="http://localhost/Pi/Flags/{{ equipe.drapeau }}" alt="" height=269 width=416>
+                            <img src="http://localhost/Pi/image/{{ equipe.drapeau }}" alt="" height=269 width=416>
                             <span class="player-number">{{ equipe.pts }}</span>
                             <div class="team-detail">
                                 <h5><a href="{{ path('Info_equipe',{'id':equipe.id}) }}">{{ equipe.nom }}</a></h5>

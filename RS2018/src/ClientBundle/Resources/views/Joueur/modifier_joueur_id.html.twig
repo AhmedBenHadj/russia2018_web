@@ -1,0 +1,81 @@
+{% extends "@Client/layout2.html.twig" %}
+
+{% block content %}
+    <div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Joueurs</a> <a href="{{ path('modifier_joueur') }}" class="current">Modifier Joueur</a> </div>
+        <h1 style="text-align: center">Modifier Joueur</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="widget-box">
+                <div class="widget-content nopadding">
+                    <div class="widget-content nopadding">
+                        <form name="myForm" action="{{ path('modifier_joueur_id',{'id':joueur.id}) }}"  enctype="multipart/form-data" method="post">
+                        <table class="row-fluid">
+                            <tr>
+                                <td>Nom :</td><td><input type="text" name="nom" id="nom" class="input-box" required ></td>
+                            </tr>
+                            <tr>
+                                <td>Prenom :</td><td><input type="text" name="prenom" id="prenom" class="input-box" required></td>
+                            </tr>
+                            <tr>
+                                <td>Age :</td><td><input type="text" name="age" id="age" class="input-box" required></td>
+                            </tr>
+                            <tr>
+                                <td>Club :</td><td><input type="text" name="club" id="club" class="input-box" required></td>
+                            </tr>
+                            <tr>
+                                <td>Poste :</td><td>
+                                    <select id="poste" name="poste">
+                                        <option>G</option>
+                                        <option>Dg</option>
+                                        <option>Dd</option>
+                                        <option>A</option>
+                                        <option>P</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Numero :</td><td><input type="text" name="numero" id="numero" class="input-box" required></td>
+                            </tr>
+                            <tr>
+                                <td>Image :</td><td><input id="image" name="image" type="file" class="input-box" required></td>
+                            </tr>
+                            <tr>
+                                <td>PosteF</td><td>
+                                    <select class="select2-container-multi" id="posteF" name="posteF">
+                                        <option>Gardien</option>
+                                        <option>Defenseur</option>
+                                        <option>Milieu</option>
+                                        <option>Attaquant</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Prix :</td><td><input type="text" id="prix" name="prix" required></td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit">Confirmer</button> </td>
+                            </tr>
+                        </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <script>
+            $('#nom').val("{{ joueur.nom }}")  ;
+            $('#prenom').val("{{ joueur.prenom }}")  ;
+            $('#age').val("{{ joueur.age }}")  ;
+            $('#numero').val("{{ joueur.numero }}")  ;
+            $('#prix').val("{{ joueur.prix }}")  ;
+            $('#poste').val("{{ joueur.poste }}")  ;
+            $('#posteF').val("{{ joueur.postef }}")  ;
+            $('#image').val("{{ joueur.image }}")  ;
+            $('#club').val("{{ joueur.club }}");
+    </script>
+{% endblock %}

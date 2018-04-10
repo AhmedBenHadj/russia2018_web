@@ -1,0 +1,68 @@
+{% extends "@Client/layout.html.twig" %}
+{% block content %}
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Mes abonnements</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                <li>Mes abonnements</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+    <!-- Page Heading banner -->
+    <div class="overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-03.jpg">
+    </div>
+    <!-- Page Heading banner -->
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Team Width Sidebar -->
+        <div class="team-grid theme-padding white-bg">
+            <div class="container">
+                <h2>Mes joueurs</h2>
+                <div class="row">
+                    {% for joueur in joueurs %}
+                        <div class="col-lg-3 col-sm-4 col-xs-6 r-full-width">
+                            <div class="team-column">
+                                <img src="http://localhost/Pi/image/{{ joueur.image }}" alt="" width=269 height=350>
+                                <span class="player-number">{{ joueur.poste }}</span>
+                                <div class="team-detail">
+                                    <h5><a href="{{ path('Info_joueur',{'id':joueur.id}) }}">{{ joueur.nom }}</a></h5>
+                                    <span class="desination">{{ joueur.nom }}</span>
+                                    <div class="detail-inner">
+                                        <ul>
+                                            <li>nom</li>
+                                            <li>prenom</li>
+                                            <li>age</li>
+                                            <li>poste</li>
+                                            <li>club</li>
+                                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                <li>Suivre {{ joueur.nom }}</li>
+                                            {% endif %}
+                                        </ul>
+                                        <ul>
+                                            <li>{{ joueur.nom }}</li>
+                                            <li>{{ joueur.prenom }}</li>
+                                            <li>{{ joueur.age }}</li>
+                                            <li>{{ joueur.poste }} </li>
+                                            <li>{{ joueur.club }}</li>
+                                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                <li>
+                                                    {% if joueur in joueurs %}
+                                                        <a href='{{ path('S_Abonner',{'id':joueur.id}) }}'>Désabonner</a>
+                                                    {% else %}
+                                                        <a href='{{ path('S_Abonner',{'id':joueur.id}) }}'>S'abonner</a>
+                                                    {% endif %}
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "@Client/layout2.html.twig" %}
+
+{% block content %}
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Equipes</a> <a href="{{ path('gestion_equipe') }}" class="current">Gestion Equipe</a> </div>
+            <h1 style="text-align: center">Gestion Equipe</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-content nopadding">
+                        <div class="widget-content nopadding">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Drapeau</th>
+                                    <th>Nom</th>
+                                    <th>Entraineur</th>
+                                    <th>Points</th>
+                                    <th>Qualification</th>
+                                    <th>Progress</th>
+                                    <th>NB match joué</th>
+                                    <th>Groupe</th>
+                                    <th>Modifier</th>
+                                    <th>Supprimer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for equipe in equipes %}
+                                    <tr>
+                                        <td><img src="http://localhost/Pi/image/{{ equipe.drapeau }}" width="35%"></td>
+                                        <td>{{ equipe.nom }}</td>
+                                        <td>{{ equipe.idEntraineur.nom }}</td>
+                                        <td>{{ equipe.pts }}</td>
+                                        <td>{{ equipe.qualification }}</td>
+                                        <td>{{ equipe.progress }}</td>
+                                        <td>{{ equipe.nbMatchJoue }}</td>
+                                        <td>{{ equipe.idGroupe.nom }}</td>
+                                        <td><a href="{{ path('modifier_equipe',{'id':equipe.id}) }}">modifier</a></td>
+                                        <td><a href="{{ path('Delete_equipe',{'id':equipe.id}) }}">supprimer</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

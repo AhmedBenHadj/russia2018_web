@@ -34,6 +34,10 @@ class Match2018Controller extends Controller
             $em->persist($matchs);
             $em->flush();
         }
+        if($matchs->getEtat() == 'Termine'){
+            $ControllerEquipe = $this->get('update_point');
+            $ControllerEquipe->update_points($matchs,$em);
+        }
         return $this->render('ClientBundle:Match2018:modifier_matchs.html.twig', array(
              'Form'=>$Form->createView()// ...
         ));

@@ -1,0 +1,53 @@
+{% extends "@Client/layout2.html.twig" %}
+
+{% block content %}
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Entraineurs</a> <a href="{{ path('Gestion_entraineur') }}" class="current">Gestion Entraineur</a> </div>
+            <h1 style="text-align: center">Gestion Entraineur</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-content nopadding">
+                        <div class="widget-content nopadding">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Description</th>
+                                    <th>Modifier</th>
+                                    <th>Supprimer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for entraineur in entraineurs %}
+                                    <tr>
+                                        <td>{{ entraineur.nom }}</td>
+                                        <td>{{ entraineur.prenom}}</td>
+                                        <td>{{ entraineur.description }}</td>
+                                        <td><a href="{{ path('modifier_entraineur',{'id':entraineur.id}) }}">modifier</a></td>
+                                        {% if entraineur in tableau %}
+                                        <td><a href="{{ path('Delete_entraineur',{'id':entraineur.id}) }}">supprimer</a></td>
+                                            {% else %}
+                                                <td><a href="#" class="none">supprimer</a></td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <script>
+        $('.none').css('color','red');
+        $('.none').click(function () {
+            alert('Ne peut supprimer un entraineur possédant une équipe');
+        })
+    </script>
+{% endblock %}

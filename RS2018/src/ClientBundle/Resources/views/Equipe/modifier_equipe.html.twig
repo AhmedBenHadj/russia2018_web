@@ -1,0 +1,92 @@
+{% extends "@Client/layout2.html.twig" %}
+
+{% block content %}
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Equipes</a> <a href="{{ path('modifier_joueur') }}" class="current">Modifier Equipe</a> </div>
+            <h1 style="text-align: center">Modification de {{ equipe.nom }}</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-content nopadding">
+                        <div class="widget-content nopadding">
+                            <form name="myForm" action="{{ path('modifier_equipe',{'id':equipe.id}) }}"  enctype="multipart/form-data" method="post">
+                                <table class="row-fluid">
+                                    <tr>
+                                        <td>Nom :</td><td><input type="text" name="nom" id="nom" class="input-box" required ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Points :</td><td><input type="number" name="points" id="points" class="input-box" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nombre de match joué :</td><td><input type="number" name="match_joue" id="match_joue" class="input-box" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Drapeau :</td><td><input id="drapeau" name="drapeau" type="file" class="input-box" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maillot :</td><td><input id="maillot" name="maillot" type="file" class="input-box" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Progress :</td><td>
+                                            <select id="progress" name="progress">
+                                                <option>pool</option>
+                                                <option>last_16</option>
+                                                <option>quart_final</option>
+                                                <option>demi_final</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Groupe</td><td>
+                                            <select class="select2-container-multi" id="groupe" name="groupe">
+                                                {% for groupe in groupes %}
+                                                    <option>{{ groupe.nom }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Qualification</td><td>
+                                            <select class="select2-container-multi" id="qualification" name="qualification">
+                                                <option>En_attente</option>
+                                                <option>Qualifie</option>
+                                                <option>Disqualifie</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entraineur</td><td>
+                                            <select class="select2-container-multi" id="entraineur" name="entraineur">
+                                                {% for entraineur in entraineurs %}
+                                                    <option>{{ entraineur.nom }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="submit">Confirmer</button> </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <script>
+        $('#nom').val("{{ equipe.nom }}")  ;
+        $('#points').val("{{ equipe.pts }}")  ;
+        $('#match_joue').val("{{ equipe.nbMatchJoue }}")  ;
+        $('#progress').val("{{ equipe.progress }}")  ;
+        $('#groupe').val("{{ equipe.idGroupe.nom }}")  ;
+        $('#qualification').val("{{ equipe.qualification }}")  ;
+        $('#entraineur').val("{{ equipe.idEntraineur.nom }}")  ;
+        $('#points').keyup(function () {
+
+        })
+    </script>
+{% endblock %}

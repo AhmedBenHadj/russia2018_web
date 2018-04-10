@@ -177,6 +177,11 @@
                                                     <li>
                                                         <a href="{{ path('tout_les_joueur') }}">Tout les joueurs</a>
                                                     </li>
+                                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                    <li>
+                                                        <a href="{{ path('Mes_abonnements') }}">Mes abonnements</a>
+                                                    </li>
+                                                    {% endif %}
                                                 </ul>
                                             </li>
 

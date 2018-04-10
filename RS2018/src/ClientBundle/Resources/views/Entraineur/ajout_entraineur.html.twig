@@ -1,0 +1,57 @@
+{% extends "@Client/layout2.html.twig" %}
+
+{% block content %}
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Entraineur</a> <a href="{{ path('Ajout_entraineur') }}" class="current">Ajouter Entraineur</a> </div>
+            <h1 style="text-align: center">Ajout d'un entraineur</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="widget-box">
+                    <div class="widget-content nopadding">
+                        <div class="widget-content nopadding">
+                            <form name="myForm" action="{{ path('Ajout_entraineur') }}"  enctype="multipart/form-data" method="post">
+                                <table class="row-fluid">
+                                    <tr>
+                                        <td>Nom :</td><td><input type="text" name="nom" id="nom" class="input-box" required ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prenom :</td><td><input type="text" name="prenom" id="prenom" class="input-box" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description :</td><td><textarea required name="description" id="description" cols="25%" ></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button type="submit">Confirmer</button> </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <script>
+        $('#nom').keyup(function () {
+            var r = new RegExp("[0-9]");
+            console.log(r.exec($('#nom').val()));
+            if(r.exec($('#nom').val()) != null){
+                $('#nom').css('background-color','red');
+            }
+            else
+                $('#nom').css('background-color','white');
+        })
+        $('#prenom').keyup(function () {
+            var r = new RegExp("[0-9]");
+            console.log(r.exec($('#prenom').val()));
+            if(r.exec($('#prenom').val()) != null){
+                $('#prenom').css('background-color','red');
+            }
+            else
+                $('#prenom').css('background-color','white');
+        })
+    </script>
+{% endblock %}

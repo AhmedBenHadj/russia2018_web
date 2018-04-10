@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-5">
                         <div class="team-column without-hover">
-                            <img src="http://localhost/Pi/Flags/{{ equipe.drapeau }}" alt="" height=416 width=269>
+                            <img src="http://localhost/Pi/image/{{ equipe.drapeau }}" alt="" height=416 width=269>
                             <span class="player-number">{{ equipe.pts }}</span>
                             <div class="team-detail">
                                 <h5>{{ equipe.nom }}</h5>
@@ -121,7 +121,9 @@
                                                 <li>age</li>
                                                 <li>poste</li>
                                                 <li>club</li>
-                                                <li>Follow us on</li>
+                                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                    <li>Suivre {{ joueur.nom }}</li>
+                                                {% endif %}
                                             </ul>
                                             <ul>
                                                 <li>{{ joueur.nom }}</li>
@@ -129,14 +131,15 @@
                                                 <li>{{ joueur.age }}</li>
                                                 <li>{{ joueur.poste }} </li>
                                                 <li>{{ joueur.club }}</li>
+                                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                                 <li>
-                                                    <ul class="social-icons">
-                                                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                        <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                                    </ul>
+                                                    {% if joueur in abonnements %}
+                                                        <a href='{{ path('S_Abonner',{'id':joueur.id}) }}'>Désabonner</a>
+                                                    {% else %}
+                                                        <a href='{{ path('S_Abonner',{'id':joueur.id}) }}'>S'abonner</a>
+                                                    {% endif %}
                                                 </li>
+                                                {% endif %}
                                             </ul>
                                         </div>
                                     </div>

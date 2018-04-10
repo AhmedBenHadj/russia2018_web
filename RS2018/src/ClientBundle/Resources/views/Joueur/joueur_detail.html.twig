@@ -5,7 +5,7 @@
             <h2>{{ joueur.prenom }} {{ joueur.nom }} </h2>
             <ul class="breadcrumbs">
                 <li><a href="{{ path('client_homepage') }}">Home</a></li>
-                <li><a href="{{ path('indexEquipe') }}">Tableau des équipes</a></li>
+                <li><a href="{{ path('indexEquipe') }}">{{ joueur.prenom }} {{ joueur.nom }}</a></li>
                 <li>{{ joueur.nom }}</li>
             </ul>
         </div>
@@ -33,7 +33,9 @@
                                         <li>age</li>
                                         <li>poste</li>
                                         <li>club</li>
-                                        <li>Fallow us on</li>
+                                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                        <li>Suivre {{ joueur.nom }}</li>
+                                        {% endif %}
                                     </ul>
                                     <ul>
                                         <li>{{ joueur.nom }}</li>
@@ -41,14 +43,15 @@
                                         <li>{{ joueur.age }}</li>
                                         <li>{{ joueur.poste }} </li>
                                         <li>{{ joueur.club }}</li>
-                                        <li>
-                                            <ul class="social-icons">
-                                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                            </ul>
-                                        </li>
+                                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                            <li>
+                                                {% if abonnements is not null %}
+                                                    <a href='{{ path('S_Abonner',{'id':joueur.id}) }}'>Désabonner</a>
+                                                {% else %}
+                                                    <a href='{{ path('S_Abonner',{'id':joueur.id}) }}'>S'abonner</a>
+                                                {% endif %}
+                                            </li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                             </div>
@@ -137,7 +140,7 @@
                     <div class="row">
                             <div class="col-lg-3 col-sm-4 col-xs-6 r-full-width">
                                 <div class="team-column">
-                                    <img src="http://localhost/Pi/Flags/{{ joueur.idEquipe.drapeau }}" alt="" width=269 height=419>
+                                    <img src="http://localhost/Pi/image/{{ joueur.idEquipe.drapeau }}" alt="" width=269 height=419>
                                     <span class="player-number">{{ joueur.idEquipe.idGroupe.nom }}</span>
                                     <div class="team-detail">
                                         <h5><a href="{{ path('Info_equipe',{'id':joueur.idEquipe.id}) }}">{{ joueur.idEquipe.nom }}</a></h5>
@@ -149,7 +152,7 @@
                                                 <li>groupe</li>
                                                 <li>entraineur</li>
                                                 <li>nb match joue</li>
-                                                <li>Follow us on</li>
+                                                <li>Suivre {{ joueur.prenom }}</li>
                                             </ul>
                                             <ul>
                                                 <li>{{ joueur.idEquipe.progress }}</li>

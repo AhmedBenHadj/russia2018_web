@@ -111,6 +111,7 @@ index2Publication:
 mesarticle:
     path:     /mesarticle
     defaults: { _controller: ClientBundle:Publication:mesarticles }
+#partie taa ahmed
 Info_equipe:
     path:     /Equipe/{id}
     defaults: { _controller: ClientBundle:Equipe:equipe }
@@ -120,6 +121,46 @@ Info_joueur:
 tout_les_joueur:
     path:     /ToutLesJoueur
     defaults: { _controller: ClientBundle:Joueur:RechercheAjax }
+modifier_joueur:
+    path:     /ModifierJoueur
+    defaults: { _controller: ClientBundle:Joueur:ModifierJoueur }
+modifier_joueur_id:
+    path:     /ModifierJoueur/{id}
+    defaults: { _controller: ClientBundle:Joueur:ModifierJoueurID }
+update_joueur:
+    path:     /UpdateJoueur/
+    defaults: { _controller: ClientBundle:Joueur:Update }
+Delete_joueur:
+    path:     /DeleteJoueur/{id}
+    defaults: { _controller: ClientBundle:Joueur:Delete }
+gestion_equipe:
+    path:     /GestionEquipe/
+    defaults: { _controller: ClientBundle:Equipe:GestionEquipe }
+modifier_equipe:
+    path:     /GestionEquipe/{id}
+    defaults: { _controller: ClientBundle:Equipe:ModifierEquipeID }
+Delete_equipe:
+    path:     /DeleteEquipe/{id}
+    defaults: { _controller: ClientBundle:Equipe:Delete }
+Gestion_entraineur:
+    path:     /GestionEntraineur/
+    defaults: { _controller: ClientBundle:Entraineur:All }
+modifier_entraineur:
+    path:     /GestionEntraineur/{id}
+    defaults: { _controller: ClientBundle:Entraineur:ModifierEntraineurID }
+Delete_entraineur:
+    path:     /DeleteEntraineur/{id}
+    defaults: { _controller: ClientBundle:Entraineur:Delete }
+Ajout_entraineur:
+    path:     /AjoutEntraineur/
+    defaults: { _controller: ClientBundle:Entraineur:AjoutEntraineur }
+S_Abonner:
+    path:     /S_Abonner/{id}
+    defaults: { _controller: ClientBundle:Joueur:S_abonner }
+Mes_abonnements:
+    path:     /MesAbo/
+    defaults: { _controller: ClientBundle:Abonnement:MesAbonnements }
+#lahné toufa el partie taa ahmed
 ajouterPari:
     path:     /ajouterpari
     defaults: { _controller: ClientBundle:Pari:Ajouter }
