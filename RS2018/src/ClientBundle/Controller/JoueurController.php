@@ -31,7 +31,6 @@ class JoueurController extends Controller
             $evenements = $em->getRepository('ClientBundle:Evenement')->findBy(array('idJoueurParticipant'=>$joueur_P->getId()));
         else
             $evenements = null;
-        dump($abonnement);
         return $this->render('ClientBundle:Joueur:joueur_detail.html.twig',array('joueur'=>$joueur,'evenements'=>$evenements,'joueur_p'=>$joueur_P,'abonnements'=>$abonnement)) ;
     }
     public function AllAction(){
@@ -42,6 +41,14 @@ class JoueurController extends Controller
     public function RechercheAjaxAction(Request $request){
         $em = $this->getDoctrine()->getManager();
         $joueurs = $em->getRepository('ClientBundle:Joueur')->findAll();
+        if ($this->getUser() != null) {
+            foreach ($joueurs as $joueur){
+                $abonnement = $em->getRepository('ClientBundle:Abonnement')->findOneBy(array('idUser' => $this->getUser()->getId(),
+                    'idJoueur' => $joueur->getId()));
+                if($abonnement!=null)
+                    $abonnements[] = $joueur ;
+            }
+        }
         if($request->isXmlHttpRequest()){
             $serializer=new Serializer(array(new ObjectNormalizer()));
             dump($request->get('recherche') );
@@ -50,7 +57,7 @@ class JoueurController extends Controller
             $data = $serializer->normalize($joueurs);
             return new JsonResponse($data);
         }
-        return $this->render('ClientBundle:Joueur:tout_les_joueurs.html.twig',array('joueurs'=>$joueurs));
+        return $this->render('ClientBundle:Joueur:tout_les_joueurs.html.twig',array('joueurs'=>$joueurs,'abonnements'=>$abonnements));
     }
     public function ModifierJoueurAction(){
         $em = $this->getDoctrine()->getManager();

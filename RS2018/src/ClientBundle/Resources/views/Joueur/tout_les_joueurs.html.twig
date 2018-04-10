@@ -83,14 +83,30 @@
                         console.log(data);
                         $('#div').html("<div class='row' id='bloc_joueurs'>"+
                             "</div>");
+                        var abonnements = [] ;
+                        {% for abonnement in abonnements %}
+                        abonnements.push({{ abonnement.id }});
+                        {% endfor %}
                         $.each(data,function (k,el) {
-                            $('#bloc_joueurs').append(
-                                "<div class='col-lg-3 col-sm-4 col-xs-6 r-full-width'>"+
+                            var id=el.id;
+                            var path="{{ path('Info_joueur',{'id':'id_'}) }}" ;
+                            var path_abonnement="{{ path('S_Abonner',{'id':'id_'}) }}";
+
+                            var aux=false ;
+
+                            if(abonnements.indexOf(el.id)!=-1){
+                                aux=true ;
+                            }
+                            else
+                                aux=false;
+                            path = path.replace('id_',id);
+                            path_abonnement = path_abonnement.replace('id_',id);
+                            ch="<div class='col-lg-3 col-sm-4 col-xs-6 r-full-width'>"+
                                 "<div class='team-column'>"+
                                 "<img src='http://localhost/Pi/image/"+ el.image +"' alt='' height=269 width=416>"+
                                 "<span class='player-number'>"+ el.numero +"</span>"+
                                 "<div class='team-detail'>"+
-                                "<h5><a href='' >"+ el.nom +"</a></h5>"+
+                                "<h5><a href='"+path+"' >"+ el.nom +"</a></h5>"+
                                 "<span class='desination'>"+el.nom +"</span>"+
                                 "<div class='detail-inner'>"+
                                 "<ul>"+
@@ -100,7 +116,9 @@
                                 "<li>poste</li>"+
                                 "<li>club</li>"+
                                 "<li>Equipe</li>"+
+                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                 "<li>Suivre "+el.nom+"</li>"+
+                                    {% endif %}
                                 "</ul>"+
                                 "<ul>"+
                                 "<li>"+ el.nom +"</li>"+
@@ -110,18 +128,24 @@
                                 "<li>"+ el.club +"</li>"+
                                 "<li>"+ el.idEquipe.nom +"</li>"+
                                 "<li>"+
-                                "<ul class='social-icons'>"+
-                                "<li><a class='facebook' href='#'><i class='fa fa-facebook'></i></a></li>"+
-                                "<li><a class='twitter' href='#'><i class='fa fa-twitter'></i></a></li>"+
-                                "<li><a class='youtube' href='#'><i class='fa fa-youtube-play'></i></a></li>"+
-                                "<li><a class='pinterest' href='#'><i class='fa fa-pinterest-p'></i></a></li>"+
-                                "</ul>"+
+                                "<ul>"+
+                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                "<li>" ;
+                                    if(aux)
+                                    ch+="<a href='"+path_abonnement+"'>Désabonner</a>";
+                                    else
+                                    ch+="<a href='"+path_abonnement+"'>S'abonner</a>";
+                                 ch+="</li>";
+                                    {% endif %}
+                                ch+="</ul>"+
                                 "</li>"+
                                 "</ul>"+
                                 "</div>"+
                                 "</div>"+
                                 "</div>"+
-                                "</div>"
+                                "</div>" ;
+                            $('#bloc_joueurs').append(
+                                ch
                             );
                         })
                     }
