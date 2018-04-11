@@ -4,6 +4,8 @@ namespace ClientBundle\Controller;
 
 use ClientBundle\Entity\Equipe;
 use ClientBundle\Entity\Match2018;
+use ClientBundle\Entity\Rating;
+use ClientBundle\Form\RatingType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -23,6 +25,9 @@ class EquipeController extends Controller
     public function equipeAction($id){
         $dql="SELECT a FROM ClientBundle:Joueur a WHERE a.idEquipe=".$id;
         $em = $this->getDoctrine()->getManager() ;
+        $rating = new Rating();
+        //$form = $this->createForm(RatingType::class,$rating);
+        //$form->handleRequest($request);
         $query = $em->createQuery($dql);
         $joueurs=$query->execute();
         $equipe = $em->getRepository('ClientBundle:Equipe')->find($id);
@@ -31,8 +36,11 @@ class EquipeController extends Controller
             foreach ($joueurs as $joueur){
                 $abonnement = $em->getRepository('ClientBundle:Abonnement')->findOneBy(array('idUser' => $this->getUser()->getId(),
                     'idJoueur' => $joueur->getId()));
-                if($abonnement!=null)
-                    $abonnements[] = $joueur ;
+                if($abonnement!=null) {
+                    $abonnements[] = $joueur;
+                }
+                $allabo = $em->getRepository('ClientBundle:Abonnement')->findBy(array('idJoueur'=>$joueur->getId()));
+                $joueur->setRating(count($allabo));
             }
         }
         return $this->render('ClientBundle:Equipe:equipe.html.twig',array('equipe'=>$equipe , 'joueurs'=>$joueurs,'abonnements'=>$abonnements));

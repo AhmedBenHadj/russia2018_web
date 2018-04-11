@@ -24,47 +24,6 @@
                     <input type="text" id="recherche" placeholder="rechercher un joueur" >
                 </form>
                 <div id="div">
-                    <!--<div class="row" id="bloc_joueurs">
-                    {% for joueur in joueurs %}
-                        <div class="col-lg-3 col-sm-4 col-xs-6 r-full-width">
-                            <div class="team-column">
-                                <img src="http://localhost/Pi/image/{{ joueur.image }}" alt="" height=269 width=416>
-                                <span class="player-number">{{ joueur.numero }}</span>
-                                <div class="team-detail">
-                                    <h5><a href="{{ path('Info_joueur',{'id':joueur.id}) }}">{{ joueur.nom }}</a></h5>
-                                    <span class="desination">{{ joueur.nom }}</span>
-                                    <div class="detail-inner">
-                                        <ul>
-                                            <li>nom</li>
-                                            <li>prenom</li>
-                                            <li>age</li>
-                                            <li>poste</li>
-                                            <li>club</li>
-                                            <li>Equipe</li>
-                                            <li>Follow us on</li>
-                                        </ul>
-                                        <ul>
-                                            <li>{{ joueur.nom }}</li>
-                                            <li>{{ joueur.prenom }}</li>
-                                            <li>{{ joueur.age }}</li>
-                                            <li>{{ joueur.poste }} </li>
-                                            <li>{{ joueur.club }}</li>
-                                            <li>{{ joueur.idEquipe.nom }}</li>
-                                            <li>
-                                                <ul class="social-icons">
-                                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>-->
                 </div>
             </div>
         </div>
@@ -84,16 +43,16 @@
                         $('#div').html("<div class='row' id='bloc_joueurs'>"+
                             "</div>");
                         var abonnements = [] ;
+                        {% if abonnements!=null %}
                         {% for abonnement in abonnements %}
                         abonnements.push({{ abonnement.id }});
                         {% endfor %}
+                        {% endif %}
                         $.each(data,function (k,el) {
                             var id=el.id;
                             var path="{{ path('Info_joueur',{'id':'id_'}) }}" ;
                             var path_abonnement="{{ path('S_Abonner',{'id':'id_'}) }}";
-
                             var aux=false ;
-
                             if(abonnements.indexOf(el.id)!=-1){
                                 aux=true ;
                             }
@@ -128,7 +87,6 @@
                                 "<li>"+ el.club +"</li>"+
                                 "<li>"+ el.idEquipe.nom +"</li>"+
                                 "<li>"+
-                                "<ul>"+
                                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                 "<li>" ;
                                     if(aux)
@@ -137,8 +95,7 @@
                                     ch+="<a href='"+path_abonnement+"'>S'abonner</a>";
                                  ch+="</li>";
                                     {% endif %}
-                                ch+="</ul>"+
-                                "</li>"+
+                                ch+="</li>"+
                                 "</ul>"+
                                 "</div>"+
                                 "</div>"+

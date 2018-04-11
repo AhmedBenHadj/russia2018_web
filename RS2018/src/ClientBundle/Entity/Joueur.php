@@ -94,7 +94,7 @@ class Joueur
      */
     private $idEquipe;
 
-
+    private $rating;
 
     /**
      * Get id
@@ -344,5 +344,11 @@ class Joueur
     public function getIdEquipe()
     {
         return $this->idEquipe;
+    }
+    public function getRating(){
+        return $this->rating;
+    }
+    public function setRating($rating){
+        $this->rating = $rating;
     }
 }

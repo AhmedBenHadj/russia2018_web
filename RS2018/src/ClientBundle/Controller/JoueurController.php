@@ -26,6 +26,8 @@ class JoueurController extends Controller
         if($this->getUser()!=null){
             $abonnement = $em->getRepository('ClientBundle:Abonnement')->findOneBy(array('idUser'=>$this->getUser()->getId(),
                 'idJoueur'=>$joueur->getId()));
+            $allabo = $em->getRepository('ClientBundle:Abonnement')->findBy(array('idJoueur'=>$joueur->getId()));
+            $joueur->setRating(count($allabo));
         }
         if($joueur_P != null)
             $evenements = $em->getRepository('ClientBundle:Evenement')->findBy(array('idJoueurParticipant'=>$joueur_P->getId()));
@@ -41,23 +43,24 @@ class JoueurController extends Controller
     public function RechercheAjaxAction(Request $request){
         $em = $this->getDoctrine()->getManager();
         $joueurs = $em->getRepository('ClientBundle:Joueur')->findAll();
+        $liste=null ;
         if ($this->getUser() != null) {
             foreach ($joueurs as $joueur){
                 $abonnement = $em->getRepository('ClientBundle:Abonnement')->findOneBy(array('idUser' => $this->getUser()->getId(),
                     'idJoueur' => $joueur->getId()));
                 if($abonnement!=null)
-                    $abonnements[] = $joueur ;
+                    $liste[] = $joueur ;
             }
         }
+        dump($request->isXmlHttpRequest());
         if($request->isXmlHttpRequest()){
             $serializer=new Serializer(array(new ObjectNormalizer()));
-            dump($request->get('recherche') );
             if($request->get('recherche') != '')
                 $joueurs = $em->getRepository('ClientBundle:Joueur')->findJoueurDQL($request->get('recherche'));
             $data = $serializer->normalize($joueurs);
             return new JsonResponse($data);
         }
-        return $this->render('ClientBundle:Joueur:tout_les_joueurs.html.twig',array('joueurs'=>$joueurs,'abonnements'=>$abonnements));
+        return $this->render('ClientBundle:Joueur:tout_les_joueurs.html.twig',array('joueurs'=>$joueurs,'abonnements'=>$liste));
     }
     public function ModifierJoueurAction(){
         $em = $this->getDoctrine()->getManager();

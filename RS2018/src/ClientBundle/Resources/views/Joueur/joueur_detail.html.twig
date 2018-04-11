@@ -36,6 +36,7 @@
                                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                         <li>Suivre {{ joueur.nom }}</li>
                                         {% endif %}
+                                        <li>Followed</li>
                                     </ul>
                                     <ul>
                                         <li>{{ joueur.nom }}</li>
@@ -52,6 +53,9 @@
                                                 {% endif %}
                                             </li>
                                         {% endif %}
+                                        <li>
+                                            {{ joueur.rating|rating(5) }}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
