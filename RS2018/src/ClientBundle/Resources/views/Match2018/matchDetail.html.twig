@@ -23,7 +23,7 @@
             {% for match in matchs1 %}
 
               <span class="pull-left">
-                    <img src="http://localhost/PI/Flags/{{ match.idEquipe1.drapeau  }}"
+                    <img src="{{ asset('images/flags/' ~match.idEquipe1.drapeau ) }}"
                          class="img-rounded" alt="p1" width="80" height="80">
                   <p></p>
                    <h2>{{ match.idEquipe1.nom }}</h2>
@@ -41,7 +41,7 @@
 
             </div>
             <span class="pull-right">
-                <img src="http://localhost/PI/Flags/{{ match.idEquipe2.drapeau  }}"
+                <img src="{{ asset('images/flags/' ~match.idEquipe2.drapeau ) }}"
                      class="img-rounded" alt="p1" width="80" height="80">
                 <p></p>
                 <h2>{{ match.idEquipe2.nom }}</h2>
@@ -73,14 +73,14 @@
                             <td><strong>Carton</strong></td>
                             <td><strong>But</strong></td>
                             <td><strong>Temps de l'evenement</strong></td>
+                            <td><strong>Equipe</strong></td>
                         </tr>
                         {% for evenement in evenements %}
                         <tr>
 
-                                <td><img src="http://localhost/PI/image/{{ evenement.idJoueurParticipant.idJoueur.image  }}"
-                                         class="img-rounded" alt="p1" width="100" height="100">
-                                    {{ evenement.idJoueurParticipant.idJoueur.nom }}
-                                    {{ evenement.idJoueurParticipant.idJoueur.prenom }}</td>
+                                <td><img src="http://localhost/PI/image/{{ evenement.idJoueurParticipant.idJoueur.image }}"
+                                         class="img-rounded" alt="p1" width="100" height="100"><br>
+                                    {{ evenement.idJoueurParticipant.idJoueur.nom }} {{ evenement.idJoueurParticipant.idJoueur.prenom }}</td>
                             {% if evenement.carton==("Jaune") %}
                                 <td><img src="{{ asset('images/Carton_jaune.png') }}"
                                           alt="p1" width="30" height="30"></td>
@@ -96,7 +96,9 @@
                                     {% else %}
                                         <td></td>
                                         {% endif %}
-                                <td>            {{ evenement.temps }}</td>
+                                <td>            {{ evenement.temps }}'</td>
+                               <td><img src="http://localhost/PI/Flags/{{ evenement.idJoueurParticipant.idJoueur.idEquipe.drapeau }}"
+                                        class="img-rounded" alt="p1" width="100" height="80"></td>
 
                         </tr>
                         {% endfor %}
@@ -104,121 +106,9 @@
                         </div>
                     </div>
 
-                    <!-- Detail
-                    <div class="match-detail-deep theme-padding-bottom">
-                        <h2>The Exploding Heads look head to the quarter</h2>
-                        <p>Gary Neville says certainty is coming back to his Valencia side in front of Sunday's match against Athletic Bilbao.  Valencia put four objectives past their.</p>
-                        <div class="video video-post">
-                            <img src="{{ asset('images/video-bg-big.jpg') }}" alt="">
-                            <span class="play-lable fa fa-video-camera"></span>
-                            <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
-                        </div>
-                        <article>
-                            <div class="social-icons">
-                                <ul>
-                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                    <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
-                                    <li><a class="comment" href="#"><i class="fa fa-comment"></i></a></li>
-                                </ul>
-                            </div>
-                            <p>Nulla cubilia adipiscing lacinia curae arcu orci neque nisi, imperdiet turpis nisl curabitur blandit placerat himenaeos blandit, dictum adipiscing ut dictum bibendum facilisis class vivamus sapien quam dapibus sit sem, donec purus tristique taciti nostra, nullam nunc donec vitae mollis aliquam ante curabitur quisque vestibulum curabitur ornare nibh, consequat tellus mi fusce lorem class.</p>
-                            <p>Inceptos class libero vulputate interdum curabitur vestibulum scelerisque purus, metus vel dictumst etiam vestibulum magna a magna egestas, sit leo massa facilisis conubia cubilia sapien venenatis tempus consectetur erat curabitur consectetur et risus consequat conubia, facilisis ut congue purus metus ligula fusce iaculis etiam ante, scelerisque a consequat lectus iaculis varius ad etiam ut purus sem.</p>
-                            <p>Iaculis placerat ullamcorper eu dapibus ullamcorper ad cubilia potenti, dictumst neque gravida libero vehicula risus sapien fusce, praesent arcu lorem odio ut quisque sit conubia egestas massa phasellus vitae quisque sodales id, inceptos mi augue</p>
-                        </article>
-                        <blockquote>
-                            <p>I like college football, but I'm a huge college basketball fan. I could sit and watch every game of March Madness and be happy.</p>
-                            <span><i class="theme-color">Woody Hayes</i> United State America</span>
-                        </blockquote>
-                        <article>
-                            <p>Malesuada erat maecenas dictumst rhoncus mollis curabitur ad nulla, et convallis curabitur primis facilisis scelerisque volutpat blandit, eu elementum rutrum fringilla morbi sodales accumsan ad etiam ultrices id cubilia mollis et molestie maecenas justo quam, proin sollicitudin. dictum proin lacinia aenean accumsan facilisis adipiscing odio pellentesque et pellentesque.</p>
-                        </article>
-                    </div>
-                    Detail -->
 
-                    <!-- Comment Section
-                    <div class="comment-holder theme-padding-bottom">
-                        <h2>Latest comments</h2>
-                        <ul>
-                            <li>
-                                <img class="position-center-x" src="{{ asset('images/commenter/img-01.jpg') }}" alt="">
-                                <div class="comment-detail">
-                                    <h5><a href="#">Rachel Evans</a></h5>
-                                    <span>December 23, 2015, 10:59 am</span>
-                                    <p>Vestibulum eros rutrum suspendisse dictum commodo magna habitasse taciti tincidunt non cursus conubia accumsan, vitae dapibus cursus id tristique porta felis porttitor ante primis libero nisi arcu elementum aliquam tincidunt eros at sapien in ac himenaeos primis duis tellus.</p>
-                                    <a class="reply-btn" href="#"><i class="fa fa-reply"></i>Reply</a>
-                                </div>
-                            </li>
-                            <li class="sub-comment">
-                                <ul>
-                                    <li>
-                                        <img class="position-center-x" src="{{ asset('images/commenter/img-1-1.jpg') }}" alt="">
-                                        <div class="comment-detail">
-                                            <h5><a href="#">Kiana Sanders</a></h5>
-                                            <span>December 23, 2015, 10:59 am</span>
-                                            <p>Vestibulum eros rutrum suspendisse dictum commodo magna habitasse taciti tincidunt non cursus conubia accumsan, vitae dapibus cursus.</p>
-                                            <a class="reply-btn" href="#"><i class="fa fa-reply"></i>Reply</a>
-                                        </div>
-                                    </li>
-                                    <li class="sub-comment">
-                                        <ul>
-                                            <li>
-                                                <img class="position-center-x" src="{{ asset('images/commenter/img-2-1.jpg') }}" alt="">
-                                                <div class="comment-detail">
-                                                    <h5><a href="#">Mahesh Kantariya</a></h5>
-                                                    <span>December 23, 2015, 10:59 am</span>
-                                                    <p>Vestibulum eros rutrum suspendisse dictum commodo magna habitasse taciti tincid</p>
-                                                    <a class="reply-btn" href="#"><i class="fa fa-reply"></i>Reply</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <img class="position-center-x" src="{{ asset('images/commenter/img-02.jpg') }}" alt="">
-                                <div class="comment-detail">
-                                    <h5><a href="#">Rachel Evans</a></h5>
-                                    <span>December 23, 2015, 10:59 am</span>
-                                    <p>Vestibulum eros rutrum suspendisse dictum commodo magna habitasse taciti tincidunt non cursus conubia accumsan, vitae dapibus cursus id tristique porta felis porttitor ante primis libero nisi arcu elementum aliquam tincidunt eros at sapien in ac himenaeos primis duis tellus.</p>
-                                    <a class="reply-btn" href="#"><i class="fa fa-reply"></i>Reply</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    Comment Section -->
 
-                    <!-- Leave a Reply
-                    <div class="leave-a-reply theme-padding-bottom">
-                        <h2>Leave a Reply</h2>
-                        <form class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Name">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email *">
-                                    <i class="fa fa-envelope"></i>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Phone">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <button class="btn red-btn full-width">Send Comments</button>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="form-group">
-                                    <textarea class="form-control style-d" rows="11" id="comment" placeholder="Write Comments here..."></textarea>
-                                    <i class="fa fa-pencil-square-o"></i>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                     Leave a Reply  -->
 
-                    <!-- Blog Grid View -->
                     <div class="blog-grid-view">
                         <h2>Related Match</h2>
                         <div class="row">

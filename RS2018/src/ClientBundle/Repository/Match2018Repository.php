@@ -53,6 +53,51 @@ class Match2018Repository extends EntityRepository
             ->createQuery("select m from ClientBundle:Match2018 m WHERE m.etat='Termine'");
         return $query->getResult();
     }
+    public function findMatchLast_16Termine(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.etat='Termine' AND m.type='last_16'");
+        return $query->getResult();
+    }
+    public function findlast_16Match(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.type='last_16'");
+        return $query->getResult();
+    }
+    public function findMatchQuartTermine(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.etat='Termine' AND m.type='quart_final'");
+        return $query->getResult();
+    }
+    public function findQuartMatch(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.type='quart_final'");
+        return $query->getResult();
+    }
+    public function findMatchDemiTermine(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.etat='Termine' AND m.type='demi_final'");
+        return $query->getResult();
+    }
+    public function findDemiMatch(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.type='demi_final'");
+        return $query->getResult();
+    }
+    public function findMatchFinalTermine(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.etat='Termine' AND m.type='final'");
+        return $query->getResult();
+    }
+    public function findFinalMatch(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.type='final'");
+        return $query->getResult();
+    }
+    public function findMatchDebut(){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Match2018 m WHERE m.etat='Debut'");
+        return $query->getResult();
+    }
     public function findEquipe(){
         $query=$this
             ->createQueryBuilder("m")->orderBy('m.idEquipe1','ASC');

@@ -1,0 +1,146 @@
+{% extends "@Client/layout2.html.twig" %}
+
+
+{% block content %}
+
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{ path('Gestion_Match') }}" class="tip-bottom">Gestion Matchs</a> <a href="#" class="current">Ajouter Evenement</a> </div>
+            <h1 style="text-align: center">Ajouter Evenement</h1>
+        </div>
+        <div class="container-fluid">
+            <hr>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                            <h5>Veuillez remplir les informations</h5>
+                        </div>
+                        {% if matchs.etat==('Termine') %}
+                        <h2>Le match est termine</h2>
+                        <h3>Vous ne pouvez plus ajouter un evenement</h3>
+                        {% else %}
+                        <form action="{{ path('Ajouter_Evenement',{'id':matchs.id}) }}" method="POST" class="form-horizontal">
+                        {#{ form_start(Form, { 'attr': {'class': 'form-horizontal'} }) #}
+
+                        <div class="control-group">
+                            <label class="control-label">Equipe 1 :</label>
+                            <div class="controls">
+                                <input style="text-align: center" type="text" class="span3" value="{{ matchs.idEquipe1.nom }}" disabled>
+
+                            </div>
+                        </div>
+                            <div class="control-group">
+                                <label class="control-label">Equipe 2 :</label>
+                                <div class="controls">
+                                    <input style="text-align: center" type="text" class="span3" value="{{ matchs.idEquipe2.nom }}" disabled>
+
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Equipe :</label>
+                                <div class="controls">
+                                    <select name="equipe" id="equipe" onchange="myFunction()">
+                                        <option>--Selectionner une equipe--</option>
+                                        <option id="e1" value="{{ matchs.idEquipe1.nom }}">{{ matchs.idEquipe1.nom }}</option>
+                                        <option id="e2" value="{{ matchs.idEquipe2.nom }}">{{ matchs.idEquipe2.nom }}</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        <div class="control-group" id="jp11">
+                            <label class="control-label">Joueur Participant :</label>
+                            <div class="controls">
+                                <select name="JP1" id="JP1">
+                                    {% for j in jpe1 %}
+                                    <option name="jp1" value="{{ j.id }}">{{ j.idJoueur.nom }}</option>
+                                        {% endfor %}
+                                </select>
+
+                            </div>
+                        </div>
+                            <div class="control-group" id="jp22">
+                                <label class="control-label">Joueur Participant :</label>
+                                <div class="controls">
+                                    <select name="JP2" id="JP2">
+                                        {% for j in jpe2 %}
+                                            <option name="jp2" value="{{ j.id }}">{{ j.idJoueur.nom }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                </div>
+                            </div>
+                        <div class="control-group">
+                            <label class="control-label">But</label>
+                            <div class="controls">
+                                <select name="but" id="but" onchange="CartonBut()">
+                                    <option></option>
+                                    <option id="0" value="0">0</option>
+                                    <option id="1" value="1">1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group" id="divcarton">
+                            <label class="control-label">Carton</label>
+                            <div class="controls">
+                                <select name="carton" id="">
+                                    <option value="PasC">PasC</option>
+                                    <option value="Jaune">Jaune</option>
+                                    <option value="Rouge">Rouge</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Temps</label>
+                            <div class="controls">
+                                <input type="text" minlength="0" maxlength="2" class="span2" name="temps">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                          <button type="submit" class="btn btn-warning">Ajouter</button>
+                        </div>
+                        {#{ form_end(Form) #}
+                        </form>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+    <script>
+        $('#jp22').hide();
+        $('#jp11').hide();
+        $('#divcarton').hide();
+        function myFunction() {
+
+            var x = document.getElementById("equipe").value;
+            var e1=$('#e2').val();
+            var e2=$('#e1').val();
+            if(x===e1){
+                $('#jp22').show();
+                $('#jp11').hide();
+                document.getElementById("JP1").removeAttribute("name");
+            }else{
+                $('#jp11').show();
+                $('#jp22').hide();
+                document.getElementById("JP2").removeAttribute("name");
+
+            }
+        }
+        function CartonBut() {
+            var y=document.getElementById("but").value;
+            var a=$('#0').val();
+            if(y===a){
+                $('#divcarton').show();
+            }else{
+                $('#divcarton').hide();
+            }
+        }
+    </script>
+
+
+{% endblock %}

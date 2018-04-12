@@ -1,0 +1,96 @@
+{% extends "@Client/layout2.html.twig" %}
+
+
+{% block content %}
+
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{ path('Gestion_Match') }}" class="tip-bottom">Gestion Matchs</a> <a href="#" class="current">Ajouter Joueur Participant</a> </div>
+            <h1 style="text-align: center">Ajouter Joueur Participant</h1>
+        </div>
+        <div class="container-fluid">
+            <hr>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                            <h5>Veuillez remplir les informations</h5>
+                        </div>
+
+                            <form action="{{ path('Ajouter_Joueur_P') }}" method="POST" class="form-horizontal">
+                                {#{ form_start(Form, { 'attr': {'class': 'form-horizontal'} }) #}
+
+                                <div class="control-group">
+                                    <label class="control-label">Equipe </label>
+                                    <div class="controls">
+                                        <select name="" id="eq" onchange="myFunction()" >
+                                            <option value="">Selectionner une equipe</option>
+                                            {% for equipe in equipes %}
+                                            <option id="equipe" value="{{ equipe.id }}">{{ equipe.nom }}</option>
+                                            {% endfor %}
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="control-group" id="divjoueur">
+                                    <label class="control-label">Joueur :</label>
+                                    <div class="controls">
+                                        <select name="" id="jo" >
+
+
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label">Temps Joué</label>
+                                    <div class="controls">
+                                        <input type="text" minlength="0" maxlength="2" class="span2" name="temps">
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-warning" >Ajouter</button>
+                                </div>
+
+                            </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById('eq').value;
+            var aux=false;
+            {% for j in joueurs %}
+            if(x==="{{ j.idEquipe.id }}"){
+
+                var y = document.getElementById("jo");
+                var option = document.createElement("option");
+                option.innerHTML = "{{ j.nom }}";
+                y.add(option);
+
+
+                aux=true;
+
+
+            }
+            {% endfor %}
+
+
+
+
+        }
+
+    </script>
+
+
+
+
+{% endblock %}

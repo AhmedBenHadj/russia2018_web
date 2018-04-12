@@ -5,7 +5,6 @@
 
     <script src="{{ asset('js/countOpenC.js') }}"></script>
 
-
     <!-- Page Heading & Breadcrumbs  -->
     <div class="page-heading-breadcrumbs">
         <div class="container">
@@ -24,7 +23,7 @@
             <div class="pager-heading match-detail white-heading">
                 {% for firstM in firstmatch %}
                 <span class="pull-left">
-                    <img src="http://localhost/PI/Flags/{{ firstM.idEquipe1.drapeau }}"
+                    <img src="http://localhost/PI/Flags/{{ firstM.idEquipe1.drapeau  }}"
                          class="img-rounded" alt="p1" width="80" height="80">
                     <p></p>
                     <h2 style="color: whitesmoke">{{ firstM.idEquipe1.nom }}</h2>
@@ -33,30 +32,29 @@
                 <div class="match-vs-heading position-center-center">
                     <div class="left-tiem-acounter">
                         <ul id="countdown-3" class="countdown">
-                           {% for date in d %}
-                               {% for heure in H %}
-                                   {% for minute in i %}
-                                       {% for seconde in s %}
+
                             <li><span class="days" id="date"></span>D:</li>
                             <li><span class="hours" id="heure"></span>H:</li>
                             <li><span class="minutes" id="minute"></span>M:</li>
                             <li><span class="seconds" id="seconde"></span>S</li>
-                                           {% endfor %}
-                                       {% endfor %}
-                                   {% endfor %}
-                            {% endfor %}
+
                         </ul>
                     </div>
                     <span class="result-vs">vs</span>
                     <div class="location-marker">
                         <ul>
-                            <li><i class="fa fa-map-marker"></i>{{ firstM.date.format("d/m/Y") }} {{ firstM.time|date('H:i') }}</li>
+                            <input type="hidden" id="day" value="{{ firstM.date.format("d") }}">
+                            <input type="hidden" id="month" value="{{ firstM.date.format("m") }}">
+                            <input type="hidden" id="heure" value="{{ firstM.time|date('H') }}">
+                            <input type="hidden" id="minute" value="{{ firstM.time|date('i') }}">
+                            <li id="date"><i class="fa fa-clock-o"></i>{{ firstM.date.format("d/m/Y") }}</li>
+                            <li id="time"><i class="fa fa-clock-o"></i>{{ firstM.time|date('H:i') }}</li>
                             <li><i class="fa fa-map-marker"></i>{{ firstM.idStade.nom }}</li>
                         </ul>
                     </div>
                 </div>
                 <span class="pull-right">
-                    <img src="http://localhost/PI/Flags/{{ firstM.idEquipe2.drapeau }}"
+                    <img src="http://localhost/PI/Flags/{{ firstM.idEquipe2.drapeau  }}"
                          class="img-rounded" alt="p1" width="80" height="80">
                     <p></p>
                     <h2 style="color: whitesmoke">{{ firstM.idEquipe2.nom }}</h2>
@@ -85,9 +83,9 @@
                                 <ul>
                                     {% for match in matchs %}
                                     <li>
-                                        <span class="pull-left"><img src="http://localhost/PI/Flags/{{ match.idEquipe1.drapeau }}"
+                                        <span class="pull-left"><img src="http://localhost/PI/Flags/{{ match.idEquipe1.drapeau  }}"
                                                                      class="img-rounded" alt="p1" width="80" height="80"></span>
-                                        <span class="pull-right"><img src="http://localhost/PI/Flags/{{ match.idEquipe2.drapeau }}"
+                                        <span class="pull-right"><img src="http://localhost/PI/Flags/{{ match.idEquipe2.drapeau  }}"
                                                                       class="img-rounded" alt="p1" width="80" height="80"></span>
                                         <div class="detail">
                                             <a href="{{ path('match-detail',{'id':match.id}) }}">Match Detail<i class="fa fa-angle-double-right"></i></a>
@@ -99,7 +97,6 @@
 
                                     </li>
                                     {% endfor %}
-
 
 
 
@@ -144,7 +141,7 @@
                                 <ul>
                                     {% for event in evenements %}
                                     <li>
-                                        <img src="http://localhost/PI/Flags/{{ event.idJoueurParticipant.idJoueur.idEquipe.drapeau }}" alt="" width="60" height="50" class="img-rounded">
+                                        <img src="http://localhost/PI/Flags/{{ event.idJoueurParticipant.idJoueur.idEquipe.drapeau  }}" alt="" width="60" height="50" class="img-rounded">
                                         <h5><a href="#">{{ event.idJoueurParticipant.idJoueur.nom }}  {{ event.idJoueurParticipant.idJoueur.prenom }}</a></h5>
                                         <span class="red-color"><i class="fa fa-clock-o"></i>a marqué un but a la minute {{ event.temps }}' </span>
                                     </li>
@@ -155,8 +152,23 @@
                         <!-- Aside Widget -->
                         <!-- Aside Widget -->
                         <div class="aside-widget" >
-                            <h3><span>Archive</span></h3>
-                            <div id="calendar-h" ></div>
+                            <h3><span>Highlights</span></h3>
+                            <div id="scorebat-jssdk">
+                                <iframe src="https://www.scorebat.com/embed/"
+                                        frameborder="0"
+                                        width="100%"
+                                        allowfullscreen
+                                        style="width:100%;overflow:hidden;min-height:400px;display:block;"
+                                        class="_scorebatEmbeddedPlayer_">
+                                </iframe>
+                            </div>
+                            <p></p>
+
+                            <div>
+                                <a href="{{ path('download') }}"> <button class="btn btn-danger">S'abonner au calendrier(Temps réel) </button></a>
+                            </div>
+
+
                         </div>
                         <!-- Aside Widget -->
 
@@ -169,6 +181,17 @@
         <!-- Match -->
 
     </main>
+
+    <script>
+        (function(d, s, id)
+        { var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return; js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://www.scorebat.com/embed/embed.js';
+            fjs.parentNode.insertBefore(js, fjs); }
+        (document, 'script', 'scorebat-jssdk'));
+    </script>
 
 
 

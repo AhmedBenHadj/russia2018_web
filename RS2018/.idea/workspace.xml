@@ -26,44 +26,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Joueur.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Joueur.php">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="352" column="5" lean-forward="false" selection-start-line="352" selection-start-column="5" selection-end-line="352" selection-end-column="5" />
+            <state relative-caret-position="-420">
+              <caret line="143" column="76" lean-forward="false" selection-start-line="143" selection-start-column="76" selection-end-line="143" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tout_les_joueurs.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/tout_les_joueurs.html.twig">
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-546">
-              <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state relative-caret-position="168">
+              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="joueur_detail.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/joueur_detail.html.twig">
+      <file leaf-file-name="Phase_Finale.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/Phase_Finale.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="82" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="82" />
+            <state relative-caret-position="141">
+              <caret line="39" column="53" lean-forward="false" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="96" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JoueurController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/JoueurController.php">
+      <file leaf-file-name="matchDetail.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchDetail.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="54" column="43" lean-forward="false" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
-              <folding>
-                <element signature="e#1128#1153#1#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-3047">
+              <caret line="99" column="61" lean-forward="false" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="matchResult.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchResult.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="125" column="134" lean-forward="false" selection-start-line="125" selection-start-column="134" selection-end-line="125" selection-end-column="134" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,64 +79,65 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="177" column="56" lean-forward="true" selection-start-line="177" selection-start-column="56" selection-end-line="177" selection-end-column="56" />
+            <state relative-caret-position="249">
+              <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/config/routing.yml">
+      <file leaf-file-name="Match2018Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/Match2018Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="153" column="17" lean-forward="true" selection-start-line="153" selection-start-column="17" selection-end-line="153" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RatingType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Form/RatingType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rating.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Rating.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EquipeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/EquipeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="42" selection-end-column="51" />
+            <state relative-caret-position="493">
+              <caret line="60" column="58" lean-forward="false" selection-start-line="60" selection-start-column="58" selection-end-line="60" selection-end-column="58" />
               <folding>
-                <element signature="e#1651#1676#1#PHP" expanded="true" />
-                <marker date="1523450546919" expanded="true" signature="807:860" ph="SELECT a FRO... ClientBundle" />
+                <element signature="e#769#919#0#PHP" expanded="false" />
+                <element signature="e#924#1234#0#PHP" expanded="false" />
+                <element signature="e#5634#8113#0#PHP" expanded="false" />
+                <element signature="e#5852#5884#1#PHP" expanded="true" />
+                <element signature="e#8119#8529#0#PHP" expanded="false" />
+                <element signature="e#8535#9327#0#PHP" expanded="false" />
+                <element signature="e#9333#9765#0#PHP" expanded="false" />
+                <element signature="e#9770#11585#0#PHP" expanded="false" />
+                <element signature="e#11592#12110#0#PHP" expanded="false" />
+                <element signature="e#12115#13383#0#PHP" expanded="false" />
+                <element signature="e#13388#13666#0#PHP" expanded="false" />
+                <element signature="e#13929#14771#0#PHP" expanded="false" />
+                <element signature="e#14776#16378#0#PHP" expanded="false" />
+                <element signature="e#16383#17973#0#PHP" expanded="false" />
+                <element signature="e#17978#19571#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbonnementController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/AbonnementController.php">
+      <file leaf-file-name="EquipeService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Services/EquipeService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-              <folding>
-                <element signature="e#736#761#1#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="621">
+              <caret line="128" column="13" lean-forward="false" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JoueurParticipantController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/JoueurParticipantController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JoueurParticipant.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/JoueurParticipant.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="83" lean-forward="false" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,7 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>equi</find>
       <find>/js</find>
       <find>path</find>
       <find>logout</find>
@@ -167,12 +175,11 @@
       <find>login</find>
       <find>joueur</find>
       <find>tout_l</find>
+      <find>localhost:8080</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s cache:clear" />
-      <command text="c clear-cache" />
       <command text="s cache:clear" />
       <command text="c clear-cache" />
       <command text="s generate:controller" />
@@ -196,57 +203,28 @@
       <command text="c dump-autoload" />
       <command text="s doctrine:generate:entities ClientBundle:Rating" />
       <command text="s doctrine:generate:entities ClientBundle:Joueur" />
+      <command text="composer require nzo/file-downloader-bundle" />
+      <command text="php composer.phar require nzo/file-downloader-bundle" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Form/YoussefForm.php" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Gallery/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Publication/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Controller/PublicationController.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Publication/article.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchResult.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchDetail.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Groupe/index.html.twig" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Stade/index.html.twig" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Form/Match2018Type.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Controller/GalleryController.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur_id.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur.html.twig" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Entity/Equipe.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Entity/Entraineur.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Repository/EntraineurRepository.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/equipe_detail.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/gestion_equipe.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/modifier_equipe.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/gestion_entraineur.html.twig" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Controller/EntraineurController.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/layout2.html.twig" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/ajout_entraineur.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/modifier_entraineur.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Controller/ScoreController.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Repository/EquipeRepository.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Controller/GroupeController.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Services/GroupeService.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Services/EquipeService.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Controller/Match2018Controller.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/starrating/js/rating.js" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Form/RatingType.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Entity/Rating.php" />
@@ -258,6 +236,34 @@
         <option value="$PROJECT_DIR$/src/ClientBundle/Controller/AbonnementController.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Controller/JoueurController.php" />
         <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/tout_les_joueurs.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/modifier_entraineur.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/modifier_equipe.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur_id.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/gestion_equipe.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/gestion_entraineur.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Controller/Match2018Controller.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Repository/EquipeRepository.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Repository/JoueurParticipantRepository.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Repository/JoueurRepository.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Repository/Match2018Repository.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/demi_finale.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/finale.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/huitieme_de_finale.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchDetail.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/Phase_Finale.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/quart_finale.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/layout2.html.twig" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Entity/Match2018.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Entity/JoueurParticipant.php" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchResult.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/ClientBundle/Services/EquipeService.php" />
       </list>
     </option>
   </component>
@@ -319,13 +325,13 @@
       <path value="$PROJECT_DIR$/vendor/endroid/twitter" />
       <path value="$PROJECT_DIR$/vendor/j7mbo/twitter-api-php" />
       <path value="$PROJECT_DIR$/vendor/blackknight467/star-rating-bundle" />
+      <path value="$PROJECT_DIR$/vendor/nzo/file-downloader-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="101" />
-    <option name="y" value="67" />
-    <option name="width" value="1346" />
-    <option name="height" value="698" />
+    <option name="x" value="-7" />
+    <option name="width" value="759" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -345,6 +351,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -386,7 +393,14 @@
               <item name="RS2018" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ClientBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="RS2018" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RS2018" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ClientBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="RS2018" type="b2602c69:ProjectViewProjectNode" />
@@ -418,7 +432,7 @@
               <item name="ClientBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Abonnement" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Match2018" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="RS2018" type="b2602c69:ProjectViewProjectNode" />
@@ -427,25 +441,7 @@
               <item name="ClientBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Equipe" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="RS2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RS2018" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ClientBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Gallery" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="RS2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RS2018" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ClientBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Joueur" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Stade" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="RS2018" type="b2602c69:ProjectViewProjectNode" />
@@ -459,7 +455,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -467,7 +462,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../SelimWeb/RS2018" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -543,7 +538,8 @@
       <workItem from="1523282810329" duration="11830000" />
       <workItem from="1523298025426" duration="18199000" />
       <workItem from="1523358104962" duration="13103000" />
-      <workItem from="1523440881467" duration="11090000" />
+      <workItem from="1523440881467" duration="23330000" />
+      <workItem from="1523488427538" duration="3414000" />
     </task>
     <servers />
   </component>
@@ -553,7 +549,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249517000" />
+    <option name="totallyTimeSpent" value="265171000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,22 +564,22 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2244898" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22771214" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30342385" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30342385" sideWeight="0.49785176" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293979" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293979" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821724" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30342385" sideWeight="0.49785176" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -600,240 +596,52 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/equipe.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="304">
+          <caret line="142" column="48" lean-forward="false" selection-start-line="142" selection-start-column="48" selection-end-line="144" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/Gestion_Matchs.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Abonnement/mes_joueurs.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="40" column="55" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="55" />
+        <state relative-caret-position="327">
+          <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Gallery/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/EquipeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="47" column="38" lean-forward="false" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        <state relative-caret-position="378">
+          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="42" selection-end-column="51" />
+          <folding>
+            <element signature="e#1651#1676#1#PHP" expanded="false" />
+            <marker date="1523450546919" expanded="true" signature="807:860" ph="SELECT a FRO... ClientBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/GalleryController.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/AbonnementController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="59" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="399">
+          <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding>
+            <element signature="e#736#761#1#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/tout_les_joueurs.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="62" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="14" />
+        <state relative-caret-position="-546">
+          <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/jquery-3.2.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1617">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur_id.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="63" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="80" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Entraineur.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/joueur_detail.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/EntraineurRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="18" column="60" lean-forward="false" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/gestion_equipe.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/modifier_equipe.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="179" lean-forward="false" selection-start-line="5" selection-start-column="179" selection-end-line="5" selection-end-column="179" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/EntraineurController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="51" column="88" lean-forward="false" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="88" />
-          <folding>
-            <element signature="e#43#78#0#PHP" expanded="false" />
-            <element signature="e#357#382#1#PHP" expanded="false" />
-            <element signature="e#434#455#1#PHP" expanded="false" />
-            <element signature="e#830#884#0#PHP" expanded="false" />
-            <element signature="e#1110#1135#1#PHP" expanded="false" />
-            <element signature="e#1546#1601#0#PHP" expanded="false" />
-            <element signature="e#2191#2243#0#PHP" expanded="false" />
-            <element signature="e#2391#2416#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/gestion_entraineur.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/layout2.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="87" column="54" lean-forward="false" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/ajout_entraineur.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="54" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/modifier_entraineur.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Score.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/ScoreController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/JoueurRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <marker date="1522862026000" expanded="true" signature="489:559" ph="SELECT e FRO... ClientBundle" />
-            <marker date="1522862026000" expanded="true" signature="729:790" ph="SELECT j FRO... ClientBundle" />
-            <marker date="1522862026000" expanded="true" signature="961:1018" ph="SELECT j FRO... ClientBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/Match2018Repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/EquipeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Match2018.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="119" column="19" lean-forward="false" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/JoueurParticipant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Evenement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1113">
-          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Equipe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="80" column="13" lean-forward="false" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Services/JoueurService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Groupe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/GroupeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/equipe_detail.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -845,31 +653,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Services/EquipeService.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Equipe.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        <state relative-caret-position="644">
+          <caret line="80" column="13" lean-forward="false" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/Match2018Controller.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/modifier_equipe.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        <state relative-caret-position="346">
+          <caret line="94" column="10" lean-forward="false" selection-start-line="94" selection-start-column="10" selection-end-line="94" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/modifier_entraineur.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="57" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur_id.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="68" column="4" lean-forward="false" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/modifier_joueur.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="82" column="13" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="82" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Entraineur/gestion_entraineur.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="65" column="54" lean-forward="false" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3633">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/gestion_equipe.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="34" column="54" lean-forward="false" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="890" column="83" lean-forward="false" selection-start-line="890" selection-start-column="83" selection-end-line="890" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/JoueurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="137" column="20" lean-forward="false" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Abonnement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/StadeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -877,137 +740,307 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/starrating/js/rating.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="34" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientBundle/Form/Match2018Type.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="56" column="5" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="819">
+          <caret line="53" column="14" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Form/JoueurType.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/EquipeRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding>
+            <element signature="e#126#160#0#PHP" expanded="false" />
+            <marker date="1523485161403" expanded="true" signature="354:390" ph="SELECT e FRO... ClientBundle" />
+            <marker date="1523485161403" expanded="true" signature="354:456" ph="SELECT e FRO... ClientBundle" />
+            <marker date="1523485161403" expanded="true" signature="748:850" ph="SELECT e FRO... ClientBundle" />
+            <marker date="1523485161403" expanded="true" signature="1158:1251" ph="select e fro... ClientBundle" />
+            <marker date="1523485161403" expanded="true" signature="1465:1655" ph="select e fro... ClientBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Form/RatingType.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/EvenementRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="-84">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522872898273" expanded="true" signature="293:363" ph="SELECT e FRO... ClientBundle" />
+            <marker date="1522872898273" expanded="true" signature="554:612" ph="select e fro... ClientBundle" />
+            <marker date="1522872898273" expanded="true" signature="810:881" ph="select e fro... ClientBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Rating.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/GroupeRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="-77">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522417628000" expanded="true" signature="326:385" ph="select e fro... ClientBundle" />
+            <marker date="1522417628000" expanded="true" signature="589:725" ph="select e fro... ClientBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Joueur.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/JoueurParticipantRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
-          <caret line="352" column="5" lean-forward="false" selection-start-line="352" selection-start-column="5" selection-end-line="352" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Equipe/equipe.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="142" column="48" lean-forward="false" selection-start-line="142" selection-start-column="48" selection-end-line="144" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Abonnement/mes_joueurs.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/EquipeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="42" selection-end-column="51" />
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
-            <element signature="e#1651#1676#1#PHP" expanded="true" />
-            <marker date="1523450546919" expanded="true" signature="807:860" ph="SELECT a FRO... ClientBundle" />
+            <marker date="1523485232758" expanded="true" signature="302:363" ph="SELECT j FRO... ClientBundle" />
+            <marker date="1523485232758" expanded="true" signature="542:789" ph="select jp fr... ClientBundle" />
+            <marker date="1523485232758" expanded="true" signature="980:1227" ph="select jp fr... ClientBundle" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/AbonnementController.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/JoueurRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        <state relative-caret-position="490">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
-            <element signature="e#736#761#1#PHP" expanded="true" />
+            <marker date="1523485256886" expanded="true" signature="489:559" ph="SELECT e FRO... ClientBundle" />
+            <marker date="1523485256886" expanded="true" signature="729:790" ph="SELECT j FRO... ClientBundle" />
+            <marker date="1523485256886" expanded="true" signature="961:1018" ph="SELECT j FRO... ClientBundle" />
+            <marker date="1523485256886" expanded="true" signature="1229:1284" ph="select m fro... ClientBundle" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/JoueurController.php">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/Match2018Repository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="54" column="43" lean-forward="false" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+        <state relative-caret-position="1953">
+          <caret line="105" column="5" lean-forward="false" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
           <folding>
-            <element signature="e#1128#1153#1#PHP" expanded="true" />
+            <marker date="1523485290654" expanded="true" signature="610:663" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="853:998" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="1178:1256" ph="select m.idE... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="1459:1507" ph="select m.idE... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="1663:1724" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="1885:1967" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="2121:2182" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="2341:2427" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="2579:2644" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="2802:2887" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="3038:3102" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="3261:3341" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="3493:3552" ph="select m fro... ClientBundle" />
+            <marker date="1523485290654" expanded="true" signature="3704:3763" ph="select m fro... ClientBundle" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/ScoreRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="177" column="56" lean-forward="true" selection-start-line="177" selection-start-column="56" selection-end-line="177" selection-end-column="56" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522342832000" expanded="true" signature="369:419" ph="select s fro... ClientBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Repository/StadeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="153" column="17" lean-forward="true" selection-start-line="153" selection-start-column="17" selection-end-line="153" selection-end-column="17" />
+        <state relative-caret-position="490">
+          <caret line="215" column="65" lean-forward="false" selection-start-line="215" selection-start-column="65" selection-end-line="215" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/tout_les_joueurs.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/ajouter_evenement.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-546">
-          <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/ajouter_joueur_p.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/demi_finale.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="93" column="66" lean-forward="true" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/finale.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="93" column="66" lean-forward="false" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/Gestion_Matchs.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/huitieme_de_finale.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="93" column="66" lean-forward="false" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/Modifier_Match.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Joueur/joueur_detail.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/modifier_matchs.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="82" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="82" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/quart_finale.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="32" column="79" lean-forward="false" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/layout2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1491">
+          <caret line="71" column="99" lean-forward="false" selection-start-line="71" selection-start-column="99" selection-end-line="71" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="27" column="67" lean-forward="false" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/Match2018.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/JoueurParticipantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Entity/JoueurParticipant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="83" lean-forward="false" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/Phase_Finale.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="39" column="53" lean-forward="false" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchResult.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="125" column="134" lean-forward="false" selection-start-line="125" selection-start-column="134" selection-end-line="125" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/matchDetail.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3047">
+          <caret line="99" column="61" lean-forward="false" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/views/Match2018/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="143" column="76" lean-forward="false" selection-start-line="143" selection-start-column="76" selection-end-line="143" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Controller/Match2018Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="60" column="58" lean-forward="false" selection-start-line="60" selection-start-column="58" selection-end-line="60" selection-end-column="58" />
+          <folding>
+            <element signature="e#769#919#0#PHP" expanded="false" />
+            <element signature="e#924#1234#0#PHP" expanded="false" />
+            <element signature="e#5634#8113#0#PHP" expanded="false" />
+            <element signature="e#5852#5884#1#PHP" expanded="true" />
+            <element signature="e#8119#8529#0#PHP" expanded="false" />
+            <element signature="e#8535#9327#0#PHP" expanded="false" />
+            <element signature="e#9333#9765#0#PHP" expanded="false" />
+            <element signature="e#9770#11585#0#PHP" expanded="false" />
+            <element signature="e#11592#12110#0#PHP" expanded="false" />
+            <element signature="e#12115#13383#0#PHP" expanded="false" />
+            <element signature="e#13388#13666#0#PHP" expanded="false" />
+            <element signature="e#13929#14771#0#PHP" expanded="false" />
+            <element signature="e#14776#16378#0#PHP" expanded="false" />
+            <element signature="e#16383#17973#0#PHP" expanded="false" />
+            <element signature="e#17978#19571#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientBundle/Services/EquipeService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="128" column="13" lean-forward="false" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
           <folding />
         </state>
       </provider>

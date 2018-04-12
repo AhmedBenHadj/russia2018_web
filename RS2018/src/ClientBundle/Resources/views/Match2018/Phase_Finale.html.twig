@@ -1,0 +1,64 @@
+{% extends "@Client/layout.html.twig" %}
+
+
+{% block content %}
+    <!-- Page Heading & Breadcrumbs  -->
+    <div class="page-heading-breadcrumbs">
+        <div class="container">
+            <h2>Phase Finale</h2>
+            <ul class="breadcrumbs">
+                <li><a href="{{ path('client_homepage') }}">Home</a></li>
+                <li>Phase Finale</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading & Breadcrumbs  -->
+
+    <!-- Page Heading banner -->
+    <div class="inner-banner style-2 overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/inner-banner/img-05.jpg">
+        <div class="container theme-padding">
+            <ul id="match-detail-slider" class="match-detail-slider">
+                {% for t in tab %}
+                    {% for i,k in t %}
+                        {% for y in k %}
+                    <li>
+                        <div class="pager-heading match-detail h-white">
+                        <span class="center">
+                        <h2>{{ i }}</h2>
+                        </span>
+                            <div style="width: 500px;margin: 0 auto;">
+                                {% if tab is empty %}
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <td><h2>est termine</h2></td>
+                                        </tr>
+
+                                    </table>
+                                    {% else %}
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td><img src="http://localhost/PI/Flags/{{ y.drapeau }}" width="200" height="200"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h2>{{ y.nom }}</h2></td>
+                                    </tr>
+                                </table>
+                                        {% endif %}
+                            </div>
+
+                        </div>
+                    </li>
+                            {% endfor %}
+                        {% endfor %}
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+    <!-- Page Heading banner -->
+
+
+
+
+
+{% endblock %}

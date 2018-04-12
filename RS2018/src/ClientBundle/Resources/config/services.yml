@@ -6,3 +6,15 @@ services:
           class: ClientBundle\Services\EquipeService
       update_etat:
           class: ClientBundle\Services\GroupeService
+      traitement:
+                class: ClientBundle\Services\TraitementPHF
+                arguments: [ "@doctrine.orm.entity_manager" ]
+      quart:
+                class: ClientBundle\Services\QuartService
+                arguments: [ "@doctrine.orm.entity_manager" ]
+      demi:
+                class: ClientBundle\Services\DemiService
+                arguments: [ "@doctrine.orm.entity_manager" ]
+      finale:
+                class: ClientBundle\Services\FinalService
+                arguments: [ "@doctrine.orm.entity_manager" ]

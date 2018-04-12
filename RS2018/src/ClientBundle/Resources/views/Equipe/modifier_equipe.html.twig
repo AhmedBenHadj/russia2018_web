@@ -85,8 +85,13 @@
         $('#groupe').val("{{ equipe.idGroupe.nom }}")  ;
         $('#qualification').val("{{ equipe.qualification }}")  ;
         $('#entraineur').val("{{ equipe.idEntraineur.nom }}")  ;
-        $('#points').keyup(function () {
-
+        $('#nom').keyup(function () {
+            var r = new RegExp("[0-9]");
+            if(r.exec($(this).val()) != null){
+                $(this).css('background-color','red');
+            }
+            else
+                $(this).css('background-color','white');
         })
     </script>
 {% endblock %}

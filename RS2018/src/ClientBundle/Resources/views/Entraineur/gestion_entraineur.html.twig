@@ -7,11 +7,14 @@
             <h1 style="text-align: center">Gestion Entraineur</h1>
         </div>
         <div class="container-fluid">
+            Recherche: <input type="text" placeholder="rechercher un joueur" id="searchbar">
+        </div>
+        <div class="container-fluid">
             <div class="row-fluid">
                 <div class="widget-box">
                     <div class="widget-content nopadding">
                         <div class="widget-content nopadding">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" id="DataTables_Table_0">
                                 <thead>
                                 <tr>
                                     <th>Nom</th>
@@ -27,9 +30,9 @@
                                         <td>{{ entraineur.nom }}</td>
                                         <td>{{ entraineur.prenom}}</td>
                                         <td>{{ entraineur.description }}</td>
-                                        <td><a href="{{ path('modifier_entraineur',{'id':entraineur.id}) }}">modifier</a></td>
+                                        <td><a href="{{ path('modifier_entraineur',{'id':entraineur.id}) }}"><button class="btn btn-primary">Modifier</button></a></td>
                                         {% if entraineur in tableau %}
-                                        <td><a href="{{ path('Delete_entraineur',{'id':entraineur.id}) }}">supprimer</a></td>
+                                        <td><a href="{{ path('Delete_entraineur',{'id':entraineur.id}) }}"><button class="btn btn-danger">Supprimer</button></a></td>
                                             {% else %}
                                                 <td><a href="#" class="none">supprimer</a></td>
                                         {% endif %}
@@ -48,6 +51,28 @@
         $('.none').css('color','red');
         $('.none').click(function () {
             alert('Ne peut supprimer un entraineur possédant une équipe');
+        })
+        $('#searchbar').keyup(function(){
+            // Declare variables
+            var input, filter, table, tr, td, a, b, i;
+            input = document.getElementById("searchbar");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("DataTables_Table_0");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                a = tr[i].getElementsByTagName("td")[0];
+                b = tr[i].getElementsByTagName("td")[1];
+                if ( (a) || (b) ) {
+                    if ((a.innerHTML.toUpperCase().indexOf(filter) > -1) || (b.innerHTML.toUpperCase().indexOf(filter) > -1)) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+
+                    }
+                }
+            }
         })
     </script>
 {% endblock %}

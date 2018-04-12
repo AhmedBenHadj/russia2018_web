@@ -3,7 +3,7 @@
 {% block content %}
     <div id="content">
         <div id="content-header">
-            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Entraineur</a> <a href="{{ path('modifier_entraineur') }}" class="current">Modifier Entraineur</a> </div>
+            <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Entraineur</a> <a href="{{ path('modifier_entraineur',{'id':entraineur.id}) }}" class="current">Modifier Entraineur</a> </div>
             <h1 style="text-align: center">Modification de {{ entraineur.nom }}</h1>
         </div>
         <div class="container-fluid">

@@ -14,6 +14,11 @@ use ClientBundle\Entity\Match2018;
 
 class EquipeService
 {
+    function cmp($a, $b)
+    {
+        //return strcmp($a->getPts, $b->getPts);
+        return $a->getPts() < $b->getPts() ;
+    }
     public function Gagnant(Match2018 $match,$em){
         //$em = $this->getDoctrine()->getManager();
         $S = $em->getRepository('ClientBundle:Score')->find($match->getId());
@@ -48,9 +53,12 @@ class EquipeService
         $this->update_qualification_pool($match,$em);
     }
     public function update_qualification_pool(Match2018 $match,$em){
+
         if($match->getIdGroupe()->getEtat() == 'Finis'){
             //$em = $this->getDoctrine()->getManager();
             $equipes = $em->getRepository('ClientBundle:Equipe')->findBy(array('idGroupe'=>$match->getIdGroupe()));
+            usort($equipes, array($this,"cmp"));
+            dump($equipes);
             $this->update_qualificiation($equipes[0],'Qualifie',$em) ;
             $this->update_qualificiation($equipes[3],'Disqualifie',$em) ;
             $rencontre = $em->getRepository('ClientBundle:Match2018')->findOneBy(array('idEquipe1'=>$equipes[1]->getId(),
@@ -112,10 +120,12 @@ class EquipeService
         $joueurs = $em->getRepository('ClientBundle:Joueur')->findBy(array('idEquipe'=>$equipe->getId()));
         foreach ($joueurs as $joueur){
             $joueur_p = $em->getRepository('ClientBundle:JoueurParticipant')->findOneBy(array('idJoueur'=>$joueur->getId()));
-            $event = $em->getRepository('ClientBundle:Evenement')->findBy(array('idJoueurParticipant'=>$joueur_p->getId()));
-            foreach ($event as $e){
-                if($e->getBut() == 1)
-                    $somme++;
+            if($joueur_p!=null) {
+                $event = $em->getRepository('ClientBundle:Evenement')->findBy(array('idJoueurParticipant' => $joueur_p->getId()));
+                foreach ($event as $e) {
+                    if ($e->getBut() == 1)
+                        $somme++;
+                }
             }
         }
         return $somme ;

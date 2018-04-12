@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new blackknight467\StarRatingBundle\StarRatingBundle(),
+            new Nzo\FileDownloaderBundle\NzoFileDownloaderBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

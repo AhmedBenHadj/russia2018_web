@@ -26,4 +26,11 @@ class JoueurRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('nom',"%".$texte."%") ;
         return $query->getResult();
     }
+    public function findJoueurParEquipe($id){
+        $query=$this->getEntityManager()
+            ->createQuery("select m from ClientBundle:Joueur m WHERE m.idEquipe=id")
+            ->setParameter('id',$id);
+        return $query->getResult();
+
+    }
 }

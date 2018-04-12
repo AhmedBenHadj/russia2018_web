@@ -4,7 +4,7 @@
     <div id="content">
     <div id="content-header">
         <div id="breadcrumb"> <a href="{{ path('dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Joueurs</a> <a href="{{ path('modifier_joueur') }}" class="current">Modifier Joueur</a> </div>
-        <h1 style="text-align: center">Modifier Joueur</h1>
+        <h1 style="text-align: center">Modifier {{ joueur.nom }}</h1>
     </div>
     <div class="container-fluid">
         <div class="row-fluid">
@@ -20,7 +20,7 @@
                                 <td>Prenom :</td><td><input type="text" name="prenom" id="prenom" class="input-box" required></td>
                             </tr>
                             <tr>
-                                <td>Age :</td><td><input type="text" name="age" id="age" class="input-box" required></td>
+                                <td>Age :</td><td><input type="number" name="age" id="age" class="input-box" required></td>
                             </tr>
                             <tr>
                                 <td>Club :</td><td><input type="text" name="club" id="club" class="input-box" required></td>
@@ -37,7 +37,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Numero :</td><td><input type="text" name="numero" id="numero" class="input-box" required></td>
+                                <td>Numero :</td><td><input type="number" name="numero" id="numero" class="input-box" required></td>
                             </tr>
                             <tr>
                                 <td>Image :</td><td><input id="image" name="image" type="file" class="input-box" required></td>
@@ -53,7 +53,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Prix :</td><td><input type="text" id="prix" name="prix" required></td>
+                                <td>Prix :</td><td><input type="number" id="prix" name="prix" required></td>
                             </tr>
                             <tr>
                                 <td><button type="submit">Confirmer</button> </td>
@@ -77,5 +77,29 @@
             $('#posteF').val("{{ joueur.postef }}")  ;
             $('#image').val("{{ joueur.image }}")  ;
             $('#club').val("{{ joueur.club }}");
+            $('#nom').keyup(function () {
+                var r = new RegExp("[0-9]");
+                if(r.exec($(this).val()) != null){
+                    $(this).css('background-color','red');
+                }
+                else
+                    $(this).css('background-color','white');
+            })
+            $('#prenom').keyup(function () {
+                var r = new RegExp("[0-9]");
+                if(r.exec($(this).val()) != null){
+                    $(this).css('background-color','red');
+                }
+                else
+                    $(this).css('background-color','white');
+            })
+            $('#club').keyup(function () {
+                var r = new RegExp("[0-9]");
+                if(r.exec($(this).val()) != null){
+                    $(this).css('background-color','red');
+                }
+                else
+                    $(this).css('background-color','white');
+            })
     </script>
 {% endblock %}

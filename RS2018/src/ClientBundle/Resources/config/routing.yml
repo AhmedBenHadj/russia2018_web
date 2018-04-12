@@ -189,7 +189,31 @@ Modifier_Match:
 indexStade:
     path:     /stade
     defaults: { _controller: ClientBundle:Stade:index }
+Phase_Finale:
+    path:     /phase
+    defaults: { _controller: ClientBundle:Match2018:phase_finale }
+huitieme:
+    path:     /huitieme
+    defaults: { _controller: ClientBundle:Match2018:huitieme }
+quart:
+    path:     /quart
+    defaults: { _controller: ClientBundle:Match2018:quart }
+demi:
+    path:     /demi
+    defaults: { _controller: ClientBundle:Match2018:demi_finale }
+finale:
+    path:     /finale
+    defaults: { _controller: ClientBundle:Match2018:Finale }
+Ajouter_Evenement:
+    path:     /ajouter/{id}
+    defaults: { _controller: ClientBundle:Match2018:Ajouter_Evenement}
 
+Ajouter_Joueur_P:
+    path:     /ajouter
+    defaults: { _controller: ClientBundle:Match2018:Ajouter_Joueur_P}
+download:
+    path:     /download
+    defaults: { _controller: ClientBundle:Match2018:downloadICS }
 #remove_trailing_slash:
 #    path: /{url}
 #    defaults: { _controller: ClientBundle:Redirecting:removeTrailingSlash }

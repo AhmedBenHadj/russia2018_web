@@ -7,11 +7,14 @@
             <h1 style="text-align: center">Gestion Equipe</h1>
         </div>
         <div class="container-fluid">
+            Recherche: <input type="text" placeholder="rechercher un joueur" id="searchbar">
+        </div>
+        <div class="container-fluid">
             <div class="row-fluid">
                 <div class="widget-box">
                     <div class="widget-content nopadding">
                         <div class="widget-content nopadding">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" id="DataTables_Table_0">
                                 <thead>
                                 <tr>
                                     <th>Drapeau</th>
@@ -37,8 +40,8 @@
                                         <td>{{ equipe.progress }}</td>
                                         <td>{{ equipe.nbMatchJoue }}</td>
                                         <td>{{ equipe.idGroupe.nom }}</td>
-                                        <td><a href="{{ path('modifier_equipe',{'id':equipe.id}) }}">modifier</a></td>
-                                        <td><a href="{{ path('Delete_equipe',{'id':equipe.id}) }}">supprimer</a></td>
+                                        <td><a href="{{ path('modifier_equipe',{'id':equipe.id}) }}"><button class="btn btn-primary">Modifier</button></a></td>
+                                        <td><a href="{{ path('Delete_equipe',{'id':equipe.id}) }}"><button class="btn btn-danger">Supprimer</button></a></td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -49,4 +52,29 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('jquery-3.2.1.min.js') }}"></script>
+    <script>
+        $('#searchbar').keyup(function(){
+            // Declare variables
+            var input, filter, table, tr, td, a, b, i;
+            input = document.getElementById("searchbar");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("DataTables_Table_0");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                a = tr[i].getElementsByTagName("td")[1];
+                b = tr[i].getElementsByTagName("td")[2];
+                if ( (a) || (b) ) {
+                    if ((a.innerHTML.toUpperCase().indexOf(filter) > -1) || (b.innerHTML.toUpperCase().indexOf(filter) > -1)) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+
+                    }
+                }
+            }
+        })
+    </script>
 {% endblock %}

@@ -12,14 +12,6 @@
             <hr>
             <div class="row-fluid">
                 <div class="span12">
-                    <div class="control-group">
-                        <label class="control-label" style="text-align: center">Selectionner type de match :
-                        </label>
-                        <select>
-                            <option>pool</option>
-                        </select>
-
-                    </div>
 
                     <div class="widget-box">
 
@@ -50,7 +42,7 @@
                                     <td>{{ match.time|date('H:i') }}</td>
                                     <td>{{ match.etat }}</td>
                                     <td><a href="{{ path('Modifier_Match',{'id':match.id}) }}"><button type="button" class="btn btn-primary">Modifier</button></a></td>
-                                    <td><a href="#"><button type="button" class="btn btn-danger">Ajouter</button></a></td>
+                                    <td><a href="{{ path('Ajouter_Evenement',{'id':match.id}) }}"><button type="button" class="btn btn-danger">Ajouter</button></a></td>
 
 
                                 </tr>

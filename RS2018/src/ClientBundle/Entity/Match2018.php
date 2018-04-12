@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
  * Match2018
  *
  * @ORM\Table(name="match_2018", indexes={@ORM\Index(name="ck_equipe_1", columns={"id_equipe_1"}), @ORM\Index(name="ck_equipe_2", columns={"id_equipe_2"}), @ORM\Index(name="ck_stade", columns={"id_stade"}), @ORM\Index(name="id", columns={"id"}), @ORM\Index(name="id_groupe", columns={"id_groupe"})})
- * @ORM\Entity
  * @ORM\Entity(repositoryClass="ClientBundle\Repository\Match2018Repository")
  */
 class Match2018

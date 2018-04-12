@@ -1,11 +1,14 @@
 function CompteARebours() {
     var date_actuelle = new Date(); // On déclare la date d'aujourd'hui.
     var annee = date_actuelle.getFullYear();
+    var day=$("#day").val();
+    var month=$("#month").val();
+    var heure=$("#heure").val();
+    var minute=$("#minute").val();
 
-    var noel = new Date(annee, 5, 14, 18, 0, 0); // On déclare la date de Noël.
-
+    var noel = new Date(annee, month-1, day, heure, minute, minute); // On déclare la date de Noël.
     if (noel.getTime() < date_actuelle.getTime()) // Si Noël est dépassé, on passe au Noël suivant !
-        noel = new Date(++annee, 5, 14, 18, 0, 0); // On re-déclare Noël pour qu'il ne soit pas passé.
+        noel = new Date(++annee, month-1, day, heure, minute, minute); // On re-déclare Noël pour qu'il ne soit pas passé.
 
     // Reste du script.
     var tps_restant = noel.getTime() - date_actuelle.getTime(); // Temps restant en millisecondes
